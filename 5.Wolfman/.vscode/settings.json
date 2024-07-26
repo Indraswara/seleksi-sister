@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.cu": "cpp",
+        "array": "cpp",
+        "xmemory": "cpp",
+        "memory_resource": "cpp",
+        "memory": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "stdexcept": "cpp"
+    }
+}
