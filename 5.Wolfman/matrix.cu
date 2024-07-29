@@ -6,6 +6,7 @@
 #include "kernel.h"
 #include "array.h"
 #include <math.h>
+
 using namespace std;
 
 int main(){

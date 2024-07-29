@@ -6,7 +6,9 @@
                 "${workspaceFolder}/**",
                 "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/bin",
                 "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/include",
-                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/include/thrust"
+                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/include/thrust",
+                "D:/path/opencv/build/bin",
+                "D:/path/opencv/build/include"
             ],
             "defines": [
                 "_DEBUG",
