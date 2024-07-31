@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int** transposeMatrix(int** arr, int size){
-    int** transposed = (int**)malloc(size * sizeof(int*));
+void printMatrix(double** arr, int size){
     for(int i = 0; i < size; i++){
-        transposed[i]= (int*)malloc(size * sizeof(int));
+        for(int j = 0; j < size; j++){
+            printf("%lf ", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+double** transposeMatrix(double** arr, int size){
+    double** transposed = (double**)malloc(size * sizeof(double*));
+    for(int i = 0; i < size; i++){
+        transposed[i]= (double*)malloc(size * sizeof(double));
     }
 
     for(int i = 0; i < size; i++){
@@ -17,14 +25,14 @@ int** transposeMatrix(int** arr, int size){
     return transposed;
 }
 
-int getMatrixDeterminant(int** arr, int n){
-    int i,j,k, factor=1, det=0; int **newm;
+double getMatrixDeterminant(double** arr, int n){
+    int i,j,k, factor=1; double det=0; double **newm;
     if(arr==NULL) return -1;
     if (n==1) return **arr; 
     for(i=0; i<n; i++) 
     {
-        if(NULL == (newm = malloc((n-1) * sizeof(int *)))) return -1;
-        for(j=0; j<n-1; j++) if (NULL == (newm[j] = malloc((n-1) * sizeof(int)))) return -1;
+        if(NULL == (newm = malloc((n-1) * sizeof(double *)))) return -1;
+        for(j=0; j<n-1; j++) if (NULL == (newm[j] = malloc((n-1) * sizeof(double)))) return -1;
         for(j=1; j<n; j++) 
         {
             for (k=0; k<n; k++)
@@ -41,11 +49,11 @@ int getMatrixDeterminant(int** arr, int n){
     return det;
 }
 
-int** getMatrixMinor(int** arr, int size, int row, int col){
+double** getMatrixMinor(double** arr, int size, int row, int col){
     // Allocate memory for the minor matrix
-    int** minor = (int**)malloc((size - 1) * sizeof(int*));
+    double** minor = (double**)malloc((size - 1) * sizeof(double*));
     for(int i = 0; i < size - 1; i++) {
-        minor[i] = (int*)malloc((size - 1) * sizeof(int));
+        minor[i] = (double*)malloc((size - 1) * sizeof(double));
     }
 
     int minorRow = 0, minorCol = 0;
@@ -64,10 +72,10 @@ int** getMatrixMinor(int** arr, int size, int row, int col){
     return minor;
 }
 
-int** getMatrixInverse(int** arr, int size) {
-    int** augmented = (int**)malloc(size * sizeof(int*));
+double** getMatrixInverse(double** arr, int size) {
+    double** augmented = (double**)malloc(size * sizeof(double*));
     for (int i = 0; i < size; i++) {
-        augmented[i] = (int*)malloc(2 * size * sizeof(int));
+        augmented[i] = (double*)malloc(2 * size * sizeof(double));
         for (int j = 0; j < size; j++) {
             augmented[i][j] = arr[i][j];
             augmented[i][j + size] = (i == j) ? 1 : 0;
@@ -78,7 +86,7 @@ int** getMatrixInverse(int** arr, int size) {
         if (augmented[i][i] == 0) {
             for (int j = i + 1; j < size; j++) {
                 if (augmented[j][i] != 0) {
-                    int* temp = augmented[i];
+                    double* temp = augmented[i];
                     augmented[i] = augmented[j];
                     augmented[j] = temp;
                     break;
@@ -86,14 +94,14 @@ int** getMatrixInverse(int** arr, int size) {
             }
         }
 
-        int diagElem = augmented[i][i];
+        double diagElem = augmented[i][i];
         for (int j = 0; j < 2 * size; j++) {
             augmented[i][j] /= diagElem;
         }
 
         for (int j = 0; j < size; j++) {
             if (i != j) {
-                int factor = augmented[j][i];
+                double factor = augmented[j][i];
                 for (int k = 0; k < 2 * size; k++) {
                     augmented[j][k] -= factor * augmented[i][k];
                 }
@@ -101,9 +109,9 @@ int** getMatrixInverse(int** arr, int size) {
         }
     }
 
-    int** inverse = (int**)malloc(size * sizeof(int*));
+    double** inverse = (double**)malloc(size * sizeof(double*));
     for (int i = 0; i < size; i++) {
-        inverse[i] = (int*)malloc(size * sizeof(int));
+        inverse[i] = (double*)malloc(size * sizeof(double));
         for (int j = 0; j < size; j++) {
             inverse[i][j] = augmented[i][j + size];
         }
@@ -114,37 +122,28 @@ int** getMatrixInverse(int** arr, int size) {
     return inverse;
 }
 
-void printMatrix(int** arr, int size){
-    for(int i = 0; i < size; i++){
-        for(int j = 0; j < size; j++){
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
-}
-
 int main(){
     int n; //n x n matrix 
 
-    printf("Enter the size of the matrix: ");
+    // printf("Enter the size of the matrix: ");
     scanf("%d", &n);
 
-    int** arr = (int**)malloc(n * sizeof(int*));
+    double** arr = (double**)malloc(n * sizeof(double*));
     for(int i = 0; i < n; i++){
-        arr[i] = (int*)malloc(n * sizeof(int));
+        arr[i] = (double*)malloc(n * sizeof(double));
     }
 
     //input each element of the matrix
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            scanf("%d", &arr[i][j]);
+            scanf("%lf", &arr[i][j]);
         }
     }
 
-    int** inverse = getMatrixInverse(arr, n);
+    double** inverse = getMatrixInverse(arr, n);
 
-    // int determinant = getMatrixDeterminant(arr, n);
+    // double determinant = getMatrixDeterminant(arr, n);
 
-    // printf("Determinant: %d\n", determinant);
+    // printf("Determinant: %lf\n", determinant);
     printMatrix(inverse, n);
 }
