@@ -1,15 +1,8 @@
-{ // c_cpp_properties.json
+{
     "configurations": [
         {
             "name": "Win32",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/bin",
-                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/include",
-                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.5/include/thrust",
-                "D:/path/opencv/build/bin",
-                "D:/path/opencv/build/include"
-            ],
+            "includePath": [],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
@@ -18,8 +11,17 @@
             "windowsSdkVersion": "10.0.26100.0",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64",
-            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx86/x64/cl.exe"
+            "intelliSenseMode": "${default}",
+            "compilerPath": "/usr/bin/g++",
+            "compilerArgs": [
+                "/usr/include/c++/13",
+                "/usr/include/x86_64-linux-gnu/c++/13",
+                "/usr/include/c++/13/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/13/include",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include"
+            ]
         }
     ],
     "version": 4
