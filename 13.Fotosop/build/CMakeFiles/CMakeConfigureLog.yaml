@@ -231,8 +231,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC"
-      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC"
+      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp"
+      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -241,13 +241,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC'
+        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6924/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b6924.dir/build.make CMakeFiles/cmTC_b6924.dir/build
-        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC'
-        Building CXX object CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4582a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4582a.dir/build.make CMakeFiles/cmTC_4582a.dir/build
+        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp'
+        Building CXX object CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -257,8 +257,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b6924.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJRzEgv.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4582a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccOtX0tL.s
         GNU C++17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -279,15 +279,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 4e0f319cd9945d8f5a9eeeeec1481ba5
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/'
-         as -v --64 -o CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJRzEgv.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccOtX0tL.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_b6924
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6924.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b6924 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_4582a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4582a.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4582a 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -300,10 +300,10 @@ events:
         gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6924' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b6924.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIlagiH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b6924 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6924' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b6924.'
-        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4582a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4582a.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2bQSTe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4582a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4582a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4582a.'
+        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp'
         
       exitCode: 0
   -
@@ -343,13 +343,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC']
+        ignore line: [Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6924/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b6924.dir/build.make CMakeFiles/cmTC_b6924.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-jJr9QC']
-        ignore line: [Building CXX object CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4582a/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_4582a.dir/build.make CMakeFiles/cmTC_4582a.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3ADmUp']
+        ignore line: [Building CXX object CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -359,8 +359,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b6924.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJRzEgv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4582a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccOtX0tL.s]
         ignore line: [GNU C++17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -381,15 +381,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 4e0f319cd9945d8f5a9eeeeec1481ba5]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJRzEgv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccOtX0tL.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_b6924]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6924.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b6924 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_4582a]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4582a.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4582a ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -402,13 +402,13 @@ events:
         ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6924' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b6924.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIlagiH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b6924 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4582a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4582a.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2bQSTe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4582a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccIlagiH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc2bQSTe.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -426,7 +426,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_b6924] ==> ignore
+          arg [cmTC_4582a] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -438,7 +438,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_b6924.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_4582a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -474,8 +474,8 @@ events:
     checks:
       - "Detecting CUDA compiler ABI info"
     directories:
-      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn"
-      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn"
+      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz"
+      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz"
     cmakeVariables:
       CMAKE_CUDA_FLAGS: ""
       CMAKE_CUDA_FLAGS_DEBUG: "-g"
@@ -485,13 +485,13 @@ events:
       variable: "CMAKE_CUDA_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn'
+        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c58a3/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c58a3.dir/build.make CMakeFiles/cmTC_c58a3.dir/build
-        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn'
-        Building CUDA object CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o
-        /usr/bin/nvcc -forward-unknown-to-host-compiler   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79d7d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_79d7d.dir/build.make CMakeFiles/cmTC_79d7d.dir/build
+        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz'
+        Building CUDA object CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o
+        /usr/bin/nvcc -forward-unknown-to-host-compiler   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o
         Using built-in specs.
         COLLECT_GCC=gcc-12
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -501,8 +501,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) 
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
-         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu
         ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"
         ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
         ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"
@@ -519,7 +519,7 @@ events:
         End of search list.
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.'
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.'
         Using built-in specs.
         COLLECT_GCC=gcc-12
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -529,8 +529,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) 
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
-         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu
         ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"
         ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
         ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"
@@ -547,7 +547,7 @@ events:
         End of search list.
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.'
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.'
         Using built-in specs.
         COLLECT_GCC=gcc-12
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -557,8 +557,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) 
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/'
-         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_0000462b_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_c58a3.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccYTRg9T.s
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00012eb9_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_79d7d.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEiXB4Q.s
         GNU C++17 (Ubuntu 12.3.0-17ubuntu1) version 12.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 12.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -582,15 +582,15 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: ad8099c2459a2c0c0050f96ea82e9468
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/'
-         as -v --64 -o CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o /tmp/ccYTRg9T.s
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/'
+         as -v --64 -o CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o /tmp/ccEiXB4Q.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.'
-        Linking CUDA executable cmTC_c58a3
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c58a3.dir/link.txt --verbose=1
-        /usr/lib/nvidia-cuda-toolkit/bin/g++  -v CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -o cmTC_c58a3  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/lib/x86_64-linux-gnu/stubs" -L"/usr/lib/x86_64-linux-gnu"
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.'
+        Linking CUDA executable cmTC_79d7d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79d7d.dir/link.txt --verbose=1
+        /usr/lib/nvidia-cuda-toolkit/bin/g++  -v CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -o cmTC_79d7d  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/lib/x86_64-linux-gnu/stubs" -L"/usr/lib/x86_64-linux-gnu"
         Using built-in specs.
         COLLECT_GCC=g++-12
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper
@@ -603,10 +603,10 @@ events:
         gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c58a3' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c58a3.'
-         /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHiCbF6.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c58a3 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c58a3' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c58a3.'
-        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_79d7d' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_79d7d.'
+         /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3bJ3tR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_79d7d /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_79d7d' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_79d7d.'
+        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz'
         
       exitCode: 0
   -
@@ -646,13 +646,13 @@ events:
     message: |
       Parsed CUDA implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn']
+        ignore line: [Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c58a3/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_c58a3.dir/build.make CMakeFiles/cmTC_c58a3.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-2oOavn']
-        ignore line: [Building CUDA object CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o]
-        ignore line: [/usr/bin/nvcc -forward-unknown-to-host-compiler   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79d7d/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_79d7d.dir/build.make CMakeFiles/cmTC_79d7d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-Wi1DSz']
+        ignore line: [Building CUDA object CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o]
+        ignore line: [/usr/bin/nvcc -forward-unknown-to-host-compiler   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=gcc-12]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -662,8 +662,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu]
         ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"]
         ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
         ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"]
@@ -680,7 +680,7 @@ events:
         ignore line: [End of search list.]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_0000462b_00000000-7_CMakeCUDACompilerABI.cpp1.']
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00012eb9_00000000-7_CMakeCUDACompilerABI.cpp1.']
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=gcc-12]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -690,8 +690,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -E -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=0 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=0 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /usr/share/cmake-3.28/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -dumpdir /tmp/ -dumpbase tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu]
         ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"]
         ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
         ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"]
@@ -708,7 +708,7 @@ events:
         ignore line: [End of search list.]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_0000462b_00000000-5_CMakeCUDACompilerABI.cpp4.']
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=0' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=0' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00012eb9_00000000-5_CMakeCUDACompilerABI.cpp4.']
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=gcc-12]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -718,8 +718,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_0000462b_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_c58a3.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccYTRg9T.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00012eb9_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_79d7d.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEiXB4Q.s]
         ignore line: [GNU C++17 (Ubuntu 12.3.0-17ubuntu1) version 12.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -743,15 +743,15 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: ad8099c2459a2c0c0050f96ea82e9468]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o /tmp/ccYTRg9T.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o /tmp/ccEiXB4Q.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.']
-        ignore line: [Linking CUDA executable cmTC_c58a3]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c58a3.dir/link.txt --verbose=1]
-        ignore line: [/usr/lib/nvidia-cuda-toolkit/bin/g++  -v CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -o cmTC_c58a3  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/lib/x86_64-linux-gnu/stubs" -L"/usr/lib/x86_64-linux-gnu"]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-m64' '-o' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.']
+        ignore line: [Linking CUDA executable cmTC_79d7d]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79d7d.dir/link.txt --verbose=1]
+        ignore line: [/usr/lib/nvidia-cuda-toolkit/bin/g++  -v CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -o cmTC_79d7d  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/lib/x86_64-linux-gnu/stubs" -L"/usr/lib/x86_64-linux-gnu"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=g++-12]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper]
@@ -764,13 +764,13 @@ events:
         ignore line: [gcc version 12.3.0 (Ubuntu 12.3.0-17ubuntu1) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c58a3' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c58a3.']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHiCbF6.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c58a3 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_79d7d' '-L/usr/lib/x86_64-linux-gnu/stubs' '-L/usr/lib/x86_64-linux-gnu' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_79d7d.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3bJ3tR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_79d7d /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/12/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccHiCbF6.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc3bJ3tR.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -788,7 +788,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_c58a3] ==> ignore
+          arg [cmTC_79d7d] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o]
@@ -802,7 +802,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..]
-          arg [CMakeFiles/cmTC_c58a3.dir/CMakeCUDACompilerABI.cu.o] ==> ignore
+          arg [CMakeFiles/cmTC_79d7d.dir/CMakeCUDACompilerABI.cu.o] ==> ignore
           arg [-lcudadevrt] ==> lib [cudadevrt]
           arg [-lcudart_static] ==> lib [cudart_static]
           arg [-lrt] ==> lib [rt]
@@ -848,8 +848,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9"
-      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9"
+      source: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7"
+      binary: "/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -858,17 +858,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9'
+        Change Dir: '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f05ca/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f05ca.dir/build.make CMakeFiles/cmTC_f05ca.dir/build
-        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9'
-        Building CXX object CMakeFiles/cmTC_f05ca.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f05ca.dir/src.cxx.o -c /home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9/src.cxx
-        Linking CXX executable cmTC_f05ca
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f05ca.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_f05ca.dir/src.cxx.o -o cmTC_f05ca 
-        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-HKS3t9'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ccacf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ccacf.dir/build.make CMakeFiles/cmTC_ccacf.dir/build
+        gmake[1]: Entering directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7'
+        Building CXX object CMakeFiles/cmTC_ccacf.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ccacf.dir/src.cxx.o -c /home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7/src.cxx
+        Linking CXX executable cmTC_ccacf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccacf.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_ccacf.dir/src.cxx.o -o cmTC_ccacf 
+        gmake[1]: Leaving directory '/home/indra/prog/lab/sister/seleksi-sister/13.Fotosop/build/CMakeFiles/CMakeScratch/TryCompile-3Z9io7'
         
       exitCode: 0
 ...

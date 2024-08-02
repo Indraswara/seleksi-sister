@@ -1,5 +1,16 @@
 #include "basic.h"
 
+
+#define CUDA_CHECK_ERROR(call)                                            \
+    do {                                                                  \
+        cudaError_t error = call;                                         \
+        if (error != cudaSuccess) {                                       \
+            std::cerr << "CUDA error at " << __FILE__ << ":" << __LINE__  \
+                      << " - " << cudaGetErrorString(error) << std::endl; \
+            exit(EXIT_FAILURE);                                           \
+        }                                                                 \
+    } while (0)
+
 // Greyscale Kernel
 __global__ void greyscaleKernel(unsigned char* input, unsigned char* output, int width, int height) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
@@ -45,6 +56,9 @@ __global__ void saturationKernel(unsigned char* input, unsigned char* output, in
         output[3 * idx + 2] = min(max(b * 255.0f, 0.0f), 255.0f);
     }
 }
+
+
+
 
 // Greyscale Function
 void greyscale(const cv::Mat& input, cv::Mat& output) {
