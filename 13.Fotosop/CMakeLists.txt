@@ -17,10 +17,10 @@ set(CUDA_ARCHITECTURES "60")
 include_directories(${CUDA_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 # Add the executable
-add_executable(app main.cu)
+add_executable(app main.cu basic.cu)
 
 # Link libraries
-target_link_libraries(app ${CUDA_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries(app ${CUDA_LIBRARIES} ${OpenCV_LIBS} dl rt pthread)
 
 # Set the CUDA properties
 set_target_properties(app PROPERTIES
