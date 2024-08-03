@@ -1,6 +1,23 @@
 #include "common.h"
 #include "controller.h"
 
+void parse_params(const char *url, char* params){
+    const char *params_pattern = "?";
+    char *params_start = strstr(url, params_pattern);
+    if (params_start == NULL) {
+        strcpy(params, "");
+        return;
+    }
+    params_start += strlen(params_pattern);
+    char *params_end = strstr(params_start, "\n");
+    if (params_end == NULL) {
+        strcpy(params, params_start);
+    } else {
+        strncpy(params, params_start, params_end - params_start);
+        params[params_end - params_start] = '\0';
+    }
+}
+
 void parse_request(const char *request, char *method, char *url, char *body, char *headers) {
     // Create a mutable copy of the request
     char *req_copy = strdup(request);
@@ -126,7 +143,7 @@ int main(int argc, char const* argv[]) {
 
 
         //before used always empty the buffer
-        char method[10], url[100], body[MAX], headers[MAX], content_type[100];
+        char method[10], url[100], body[MAX], headers[MAX], content_type[100], params[100];
         memset(method, 0, sizeof(method));
         memset(url, 0, sizeof(url));
         memset(body, 0, sizeof(body));
@@ -135,6 +152,8 @@ int main(int argc, char const* argv[]) {
 
         //parsing request
         parse_request(buffer, method, url, body, headers);
+        //get the params
+        parse_params(url, params);
         //get the content-type
         get_content_type(headers, content_type);
 
@@ -143,10 +162,11 @@ int main(int argc, char const* argv[]) {
         printf("Body: %s\n", body);
         printf("Headers: %s\n", headers);
         printf("Content-Type: %s\n", content_type);
+        printf("Params: %s\n", params);
 
         // Handle routing GET, POST, PUT, DELETE
-        if(strcmp(method, "GET") == 0 && strcmp(url, "/nilai-akhir") == 0) {
-            getNilaiAkhir(new_socket);
+        if(strcmp(method, "GET") == 0 && strncmp(url, "/nilai-akhir", 12) == 0) {
+            getNilaiAkhir(new_socket, params);
         }else if(strcmp(method, "POST") == 0 && strcmp(url, "/submit") == 0) {
             submitNilaiAkhir(new_socket, body, content_type);
         }else if(strcmp(method, "PUT") == 0 && strcmp(url, "/update") == 0) {

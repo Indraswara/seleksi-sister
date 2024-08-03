@@ -22,13 +22,20 @@ void send_response(int client_socket, const char* status, const char* content_ty
 /**
  * function get the nilai akhir from the client
  * @param client_socket: the client socket (for now 8080)
+ * @param params: the params that submitted by client
  * @return void
  */
-void getNilaiAkhir(int client_socket){
+
+void getNilaiAkhir(int client_socket, const char* params){
     char body[MAX] = {0};
-    sprintf(body, "GET Nilai Akhir");
+    if (strlen(params) > 0) {
+        sprintf(body, "GET Nilai Akhir with params: %s", params);
+    } else {
+        sprintf(body, "GET Nilai Akhir");
+    }
     send_response(client_socket, "200 OK", "text/plain", body);
 }
+
 
 /**
  * function for POST method 
@@ -83,7 +90,7 @@ void updateNilaiAkhir(int client_socket, const char* body, const char* content_t
  * function for DELETE method
  * @param client_socket: the client socket (for now 8080)
  */
-void deleteNilaiAkhir(int client_socket) {
+void deleteNilaiAkhir(int client_socket){
     char response[MAX] = {0};
     sprintf(response, "{\"status\": \"deleted\"}");
     send_response(client_socket, "200 OK", "application/json", response);
