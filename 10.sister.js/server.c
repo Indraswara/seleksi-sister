@@ -2,49 +2,52 @@
 #include "controller.h"
 
 void parse_request(const char *request, char *method, char *url, char *body, char *headers) {
-    // Create a copy of the request to work with
+    // Create a mutable copy of the request
     char *req_copy = strdup(request);
     char *line = req_copy;
 
     // Parse the first line to get the method and URL
     sscanf(line, "%s %s", method, url);
 
-    // Initialize the headers and body buffers
+    // Initialize headers and body buffers
     headers[0] = '\0';
     body[0] = '\0';
 
-    // Move to the next line
+    // Move to the end of the first line
     line = strstr(line, "\r\n") + 2;
 
-    // Parse headers and body
+    // Determine if we are parsing headers or body
     bool is_body = false;
-    while (*line != '\0') {
-        char *next_line = strstr(line, "\r\n");
-        if (next_line == NULL) {
-            next_line = line + strlen(line);
-        }
 
-        if (is_body) {
-            strncat(body, line, next_line - line);
-            strcat(body, "\n"); // Add newline character after each line of the body
-        } else {
+    while (*line) {
+        char *next_line = strstr(line, "\r\n");
+        if (!next_line) next_line = line + strlen(line);
+
+        if (!is_body) {
             if (next_line == line) {
-                is_body = true;
+                is_body = true; // Empty line signifies end of headers
             } else {
+                // Append header and add newline
                 strncat(headers, line, next_line - line);
                 strcat(headers, "\n");
             }
+        } else {
+            // Append body and add newline
+            strncat(body, line, next_line - line);
+            strcat(body, "\n");
         }
 
+        // Move to the next line
         line = next_line + 2;
     }
 
-    // Remove the last newline character from the body
-    if (strlen(body) > 0 && body[strlen(body) - 1] == '\n') {
-        body[strlen(body) - 1] = '\0';
+    // Remove the trailing newline character from the body, if present
+    size_t body_len = strlen(body);
+    if (body_len > 0 && body[body_len - 1] == '\n') {
+        body[body_len - 1] = '\0';
     }
 
-    // Clean up the duplicated request copy
+    // Free the duplicated request copy
     free(req_copy);
 }
 
@@ -104,10 +107,12 @@ int main(int argc, char const* argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    //listen to the port 8080
     if (listen(server_fd, 3) < 0) {
         perror("listen");
         exit(EXIT_FAILURE);
     }
+
 
     while (1) {
         if ((new_socket = accept(server_fd, (SA*)&address, &addrlen)) < 0) {
@@ -115,6 +120,7 @@ int main(int argc, char const* argv[]) {
             exit(EXIT_FAILURE);
         }
 
+        //read the request from client
         valueRead = read(new_socket, buffer, MAX);
         printf("Request received:\n%s\n", buffer);
 
