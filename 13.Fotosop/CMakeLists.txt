@@ -10,17 +10,17 @@ find_package(CUDA REQUIRED)
 find_package(OpenCV REQUIRED)
 include_directories ("/usr/include/opencv4/")
 
-# Set the CUDA architecture (adjust according to your GPU)
+# Set the CUDA architecture 
 set(CUDA_ARCHITECTURES "60")
 
 # Include directories
 include_directories(${CUDA_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 # Add the executable
-add_executable(app main.cu)
+add_executable(app main.cu basic.cu gaussian.cu sobel.cu)
 
 # Link libraries
-target_link_libraries(app ${CUDA_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries(app ${CUDA_LIBRARIES} ${OpenCV_LIBS} dl rt pthread)
 
 # Set the CUDA properties
 set_target_properties(app PROPERTIES
