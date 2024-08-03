@@ -11,6 +11,6 @@ void submitNilaiAkhir(int client_socket, const char* body, const char* content_t
 void updateNilaiAkhir(int client_socket, const char* body, const char* content_type); 
 
 //DELETE METHOD Controller
-void deleteNilaiAkhir(int client_socket);
+void deleteNilaiAkhir(int client_socket, const char* params);
 
 #endif

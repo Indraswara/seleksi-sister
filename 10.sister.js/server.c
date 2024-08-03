@@ -1,5 +1,6 @@
 #include "common.h"
 #include "controller.h"
+#include "data.h"
 
 void parse_params(const char *url, char* params){
     const char *params_pattern = "?";
@@ -35,6 +36,9 @@ void parse_request(const char *request, char *method, char *url, char *body, cha
 
     // Determine if we are parsing headers or body
     bool is_body = false;
+
+    //initialize Data
+    //malloc
 
     while (*line) {
         char *next_line = strstr(line, "\r\n");
@@ -163,7 +167,7 @@ int main(int argc, char const* argv[]) {
         printf("Headers: %s\n", headers);
         printf("Content-Type: %s\n", content_type);
         printf("Params: %s\n", params);
-
+        
         // Handle routing GET, POST, PUT, DELETE
         if(strcmp(method, "GET") == 0 && strncmp(url, "/nilai-akhir", 12) == 0) {
             getNilaiAkhir(new_socket, params);
@@ -171,8 +175,8 @@ int main(int argc, char const* argv[]) {
             submitNilaiAkhir(new_socket, body, content_type);
         }else if(strcmp(method, "PUT") == 0 && strcmp(url, "/update") == 0) {
             updateNilaiAkhir(new_socket, body, content_type);
-        }else if(strcmp(method, "DELETE") == 0 && strcmp(url, "/delete") == 0) {
-            deleteNilaiAkhir(new_socket);
+        }else if(strcmp(method, "DELETE") == 0 && strncmp(url, "/delete", 7) == 0) {
+            deleteNilaiAkhir(new_socket, params);
         }else{
             //default handler
             const char *response = "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\n\r\nRoute not found";
