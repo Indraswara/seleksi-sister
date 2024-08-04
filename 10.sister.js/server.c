@@ -1,76 +1,6 @@
 #include "common.h"
 #include "controller.h"
 
-void parse_params(const char *url, char* params){
-    const char *params_pattern = "?";
-    char *params_start = strstr(url, params_pattern);
-    if (params_start == NULL) {
-        strcpy(params, "");
-        return;
-    }
-    params_start += strlen(params_pattern);
-    char *params_end = strstr(params_start, "\n");
-    if (params_end == NULL) {
-        strcpy(params, params_start);
-    } else {
-        strncpy(params, params_start, params_end - params_start);
-        params[params_end - params_start] = '\0';
-    }
-}
-
-void parse_request(const char *request, char *method, char *url, char *body, char *headers) {
-    // Create a mutable copy of the request
-    char *req_copy = strdup(request);
-    char *line = req_copy;
-
-    // Parse the first line to get the method and URL
-    sscanf(line, "%s %s", method, url);
-
-    // Initialize headers and body buffers
-    headers[0] = '\0';
-    body[0] = '\0';
-
-    // Move to the end of the first line
-    line = strstr(line, "\r\n") + 2;
-
-    // Determine if we are parsing headers or body
-    bool is_body = false;
-
-    //initialize Data
-    //malloc
-
-    while (*line) {
-        char *next_line = strstr(line, "\r\n");
-        if (!next_line) next_line = line + strlen(line);
-
-        if (!is_body) {
-            if (next_line == line) {
-                is_body = true; // Empty line signifies end of headers
-            } else {
-                // Append header and add newline
-                strncat(headers, line, next_line - line);
-                strcat(headers, "\n");
-            }
-        } else {
-            // Append body and add newline
-            strncat(body, line, next_line - line);
-            strcat(body, "\n");
-        }
-
-        // Move to the next line
-        line = next_line + 2;
-    }
-
-    // Remove the trailing newline character from the body, if present
-    size_t body_len = strlen(body);
-    if (body_len > 0 && body[body_len - 1] == '\n') {
-        body[body_len - 1] = '\0';
-    }
-
-    // Free the duplicated request copy
-    free(req_copy);
-}
-
 
 //getting content type
 /**
@@ -134,7 +64,7 @@ int main(int argc, char const* argv[]) {
     }
 
 
-    while (1) {
+    while(1){
         if ((new_socket = accept(server_fd, (SA*)&address, &addrlen)) < 0) {
             perror("accept");
             exit(EXIT_FAILURE);
@@ -153,10 +83,16 @@ int main(int argc, char const* argv[]) {
         memset(headers, 0, sizeof(headers));
         memset(content_type, 0, sizeof(content_type));
 
-        //parsing request
+        /**
+         * parse the request
+         */
         parse_request(buffer, method, url, body, headers);
-        //get the params
+        /**
+         * get params for DELETE and GET method
+         */
+        int count = 0; 
         parse_params(url, params);
+        char keys[10][256], values[10][256];
         //get the content-type
         get_content_type(headers, content_type);
 
@@ -165,17 +101,17 @@ int main(int argc, char const* argv[]) {
         printf("Body: %s\n", body);
         printf("Headers: %s\n", headers);
         printf("Content-Type: %s\n", content_type);
-        printf("Params: %s\n", params);
-        
+
         // Handle routing GET, POST, PUT, DELETE
         if(strcmp(method, "GET") == 0 && strncmp(url, "/nilai-akhir", 12) == 0) {
-            getNilaiAkhir(new_socket, params);
+            GET(new_socket, params);
         }else if(strcmp(method, "POST") == 0 && strcmp(url, "/submit") == 0) {
-            submitNilaiAkhir(new_socket, body, content_type);
+            POST(new_socket, body, content_type);
         }else if(strcmp(method, "PUT") == 0 && strcmp(url, "/update") == 0) {
-            updateNilaiAkhir(new_socket, body, content_type);
+            PUT(new_socket, body, content_type);
         }else if(strcmp(method, "DELETE") == 0 && strncmp(url, "/delete", 7) == 0) {
-            deleteNilaiAkhir(new_socket, params);
+            params_to_pairs(params, keys, values, &count);
+            DELETE(new_socket, keys, values, &count);
         }else{
             //default handler
             const char *response = "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\n\r\nRoute not found";
@@ -183,7 +119,6 @@ int main(int argc, char const* argv[]) {
         }
         close(new_socket);
     }
-
     close(server_fd);
     return 0;    
 }
