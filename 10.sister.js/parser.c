@@ -1,5 +1,21 @@
 #include "parser.h"
 
+void get_content_type(const char *headers, char* content_type) {
+    const char *content_type_pattern = "Content-Type: ";
+    char *content_type_start = strstr(headers, content_type_pattern);
+    if (content_type_start == NULL) {
+        strcpy(content_type, "text/plain");
+        return;
+    }
+    content_type_start += strlen(content_type_pattern);
+    char *content_type_end = strstr(content_type_start, "\n");
+    if (content_type_end == NULL) {
+        strcpy(content_type, content_type_start);
+    } else {
+        strncpy(content_type, content_type_start, content_type_end - content_type_start);
+        content_type[content_type_end - content_type_start] = '\0';
+    }
+}
 
 /**
  * function to parse the params from the url

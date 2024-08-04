@@ -2,7 +2,7 @@
 #define __PARSER_H__
 
 #include "common.h"
-
+void get_content_type(const char *headers, char* content_type);
 /**
  * @parse_params: parse params from url example: /?key1=value1&key2=value2
  * @params_to_pairs: parse params to key-value pairs
