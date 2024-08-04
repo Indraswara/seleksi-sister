@@ -1,5 +1,5 @@
 #include "controller.h"
-#include "common.h"
+
 
 
 /**
@@ -26,9 +26,9 @@ void send_response(int client_socket, const char* status, const char* content_ty
  * @return void
  */
 
-void getNilaiAkhir(int client_socket, const char* params){
+void GET_example(int client_socket, const char* params){
     char body[MAX] = {0};
-    if (strlen(params) > 0) {
+    if (strlen(params) != 0) {
         sprintf(body, "GET Nilai Akhir with params: %s", params);
     } else {
         sprintf(body, "GET Nilai Akhir");
@@ -40,58 +40,117 @@ void getNilaiAkhir(int client_socket, const char* params){
 /**
  * function for POST method 
  * @param client_socket: the client socket (for now 8080)
- * @param body: the response body (data that submitted by client)
+ * @param body: the body that submitted by client
  * @param content_type: the type of content that submitted by client
- * if it's used in raw format, it can be in 3 types and maybe each of them look like this
  * 1. text/plain
- * e.g: "nama=Joni&nilai=90"
  * 2. application/json
- * e.g:
- * {
- *  "nama": "Joni",
- *  "nilai": 90
- * } 
  * 3. application/x-www-form-urlencoded
- * e.g: "nama=Joni&nilai=90"
+ * @return void
  */
 
-void submitNilaiAkhir(int client_socket, const char* body, const char* content_type) {
+void POST_example(int client_socket, const char* body, const char* content_type) {
     char response[MAX] = {0};
+    char keys[10][256]; 
+    char values[10][256]; 
+    int count = 0;
+
+    memset(keys, 0, sizeof(keys));
+    memset(values, 0, sizeof(values));
+    memset(response, 0, sizeof(response));
+
+    bool is_valid = true;
     if (strcmp(content_type, "text/plain") == 0) {
-        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
+        parser_text_plain(body, keys, values, &count);
     } else if (strcmp(content_type, "application/json") == 0) {
-        sprintf(response, "{\"status\": \"submitted\", \"data\": %s}", body);
+        parse_JSON(body, keys, values, &count);
     } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
-        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
+        parser_url_encoded(body, keys, values, &count);
     } else {
         sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
+        is_valid = false;
     }
+
+    //debugger
+    // printf("body: %s\n", body);
+    // printf("count: %d\n", count);
+    // for (int i = 0; i < count; i++) {
+    //     printf("key: %s, value: %s\n", keys[i], values[i]);
+    // }
+
+    //make response if the data is valid
+    if(is_valid){
+        generate_response(response, keys, values, count);
+        strcat(response, "}}"); 
+    }
+
     send_response(client_socket, "200 OK", "application/json", response);
 }
 
 /**
  * same as the POST method but it's used for PUT method
  */
-void updateNilaiAkhir(int client_socket, const char* body, const char* content_type) {
+void PUT_example(int client_socket, const char* body, const char* content_type) {
     char response[MAX] = {0};
+    char keys[10][256];
+    char values[10][256]; 
+    int count = 0;
+
+    bool isValid = true;
     if (strcmp(content_type, "text/plain") == 0) {
-        sprintf(response, "{\"status\": \"updated\", \"data\": \"%s\"}", body);
+        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
+        // parser_text(body, key, value);
     } else if (strcmp(content_type, "application/json") == 0) {
-        sprintf(response, "{\"status\": \"updated\", \"data\": %s}", body);
+        parse_JSON(body, keys, values, &count);
     } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
-        sprintf(response, "{\"status\": \"updated\", \"data\": \"%s\"}", body);
+        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
+        // parser_text(body, key, value);
     } else {
         sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
+        isValid = false;
     }
-    send_response(client_socket, "200 OK", "application/json", response);
+
+    //debugger
+    // printf("body: %s\n", body);
+    // for (int i = 0; i < count; i++) {
+    //     printf("key: %s, value: %s\n", keys[i], values[i]);
+    // }
+
+    if(isValid){
+        generate_response(response, keys, values, count);
+        send_response(client_socket, "200 OK", "application/json", response);
+    }
+    else{
+        send_response(client_socket, "400 Bad Request", "application/json", response);
+    }
 }
 
 /**
  * function for DELETE method
  * @param client_socket: the client socket (for now 8080)
+ * @param keys: the keys that submitted by client
+ * @param values: the values that submitted by client
+ * @param count: the count of the keys and values
+ * @return void
  */
-void deleteNilaiAkhir(int client_socket){
+void DELETE_example(int client_socket,const char* body, const char* content_type , char keys[][256], char values[][256], int* count){
     char response[MAX] = {0};
-    sprintf(response, "{\"status\": \"deleted\"}");
+
+    if(*count > 0){
+        strcat(response, "{\"status\": \"deleted\", \"data\": {");
+        for(int i = 0; i < *count; i++){
+            int pair_length = strlen(keys[i]) + strlen(values[i]) + 6; // 6 for the surrounding quotes and colons
+            char* pair = malloc(pair_length * sizeof(char));
+            sprintf(pair, "\"%s\": \"%s\"", keys[i], values[i]);
+            strcat(response, pair);
+            if(i < *count - 1){
+                strcat(response, ", ");
+            }
+            free(pair);
+        }
+        strcat(response, "}}");
+    } else {
+        strcat(response, "{\"status\": \"deleted\", \"data\": {}}");
+    }
+
     send_response(client_socket, "200 OK", "application/json", response);
 }
