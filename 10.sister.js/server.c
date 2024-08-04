@@ -1,6 +1,5 @@
 #include "common.h"
 #include "controller.h"
-#include "data.h"
 
 void parse_params(const char *url, char* params){
     const char *params_pattern = "?";
