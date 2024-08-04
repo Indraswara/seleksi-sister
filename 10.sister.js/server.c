@@ -1,7 +1,6 @@
-#include "common.h"
-#include "controller.h"
-#include "route.h"
 #include "server.h"
+
+
 
 void custom_get_handler(int client_socket, const char* body, const char* content_type) {
     char response[MAX] = "Custom GET Handler";
@@ -62,26 +61,29 @@ void start_server() {
 
         //before used always empty the buffer
         char method[10], url[100], body[MAX], headers[MAX], content_type[100];
-        memset(method, 0, sizeof(method));
-        memset(url, 0, sizeof(url));
-        memset(body, 0, sizeof(body));
-        memset(headers, 0, sizeof(headers));
-        memset(content_type, 0, sizeof(content_type));
+        HttpRequest request = {0}; 
+        memset(&request, 0, sizeof(HttpRequest));
+
+
 
         //parse the request
-        parse_request(buffer, method, url, body, headers);
-        get_content_type(headers, content_type);
+        // parse_request(buffer, method, url, body, headers);
+        parse_request(buffer, request.method, request.url, request.body, request.headers);
+        get_content_type(request.headers, request.content_type);
+        parse_params(request.url, request.params);
 
-        printf("Method: %s\n", method);
-        printf("URL: %s\n", url);
-        printf("Body: %s\n", body);
-        printf("Headers: %s\n", headers);
-        printf("Content-Type: %s\n", content_type);
+        char* temp = strtok(request.url, "?");
+        strcpy(request.url, temp);
+
+        printf("==============================================\n");
+        printf("Method: %s\n", request.method);
+        printf("URL: %s\n", request.url);
+        printf("Body: %s\n", request.body);
+        printf("Headers: %s\n", request.headers);
+        printf("Content-Type: %s\n", request.content_type);
 
         // Route the request
-
-        route_request(method, url, new_socket, body, content_type);
-
+        route_request(new_socket, &request);
         close(new_socket);
     }
     close(server_fd);

@@ -19,29 +19,29 @@ void add_route(const char* method, const char* url, RouteHandler handler) {
     }
 }
 
-void route_request(const char* method, const char* url, int client_socket, const char* body, const char* content_type) {
+void route_request(int client_socket, HttpRequest* req) {
     char params[100];
-    parse_params(url, params);
+    parse_params(req->url, params);
 
-    char* true_url = strtok((char*)url, "?");
+    bool if_get = strcmp(req->method, "GET") == 0;
+    bool if_delete = strcmp(req->method, "DELETE") == 0;
 
-    bool if_get = strcmp(method, "GET") == 0;
-    bool if_delete = strcmp(method, "DELETE") == 0;
-    
+
+
     for (int i = 0; i < route_count; i++){
-        if (strcmp(routes[i].method, method) == 0 && strcmp(routes[i].url, url) == 0) {
+        if (strcmp(routes[i].method, req->method) == 0 && strcmp(routes[i].url, req->url) == 0) {
             if(if_get){
-                routes[i].handler(client_socket, params, content_type, NULL, NULL, NULL);
+                routes[i].handler(client_socket, req, NULL, NULL, NULL);
             }
             else if(if_delete){
                 char keys[10][256];
                 char values[10][256];
                 int count = 0;
                 parser_url_encoded(params, keys, values, &count);
-                routes[i].handler(client_socket, NULL, NULL, keys, values, &count);
+                routes[i].handler(client_socket, req, keys, values, &count);
             }
-            else{
-                routes[i].handler(client_socket, body, content_type, NULL, NULL, NULL);
+            else{ //POST or PUT
+                routes[i].handler(client_socket, req, NULL, NULL, NULL);
             }
             return;
         }
@@ -49,3 +49,8 @@ void route_request(const char* method, const char* url, int client_socket, const
     const char *response = "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\n\r\nRoute not found";
     send(client_socket, response, strlen(response), 0);
 }
+
+
+// void route_request2(HttpRequest* req, int client_socket) {
+//     route_request(client_socket, req);
+// }

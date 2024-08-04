@@ -2,6 +2,7 @@
 #define __UTIL_H__
 
 #include "common.h"
+#include "http.h"
 
 /**
  * @brief Parse the request and store the keys and values in the respective arrays
@@ -15,5 +16,15 @@
  */
 void generate_response(char response[MAX], char keys[][256], char values[][256], int count);
 
+
+/**
+ * @brief Parse the request and store the keys and values in the respective arrays
+ * 
+ * @param res : pointer to HttpResponse
+ * @param keys: array of keys
+ * @param values: array of values
+ * @param count: jumlah key-value pairs
+ */
+void generate_response_http(HttpRequest* req, HttpResponse* res, char keys[][256], char values[][256], int count);
 
 #endif

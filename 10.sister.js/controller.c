@@ -1,7 +1,6 @@
 #include "controller.h"
 
 
-
 /**
  * function send response back to the client it's shown in the terminal for now 
  * @param client_socket: the client socket
@@ -26,12 +25,12 @@ void send_response(int client_socket, const char* status, const char* content_ty
  * @return void
  */
 
-void GET_example(int client_socket, const char* params){
-    char body[MAX] = {0};
-    if (strlen(params) != 0) {
-        sprintf(body, "GET Nilai Akhir with params: %s", params);
+void GET_example(int client_socket, HttpRequest *req){
+    char body[MAX + 100] = {0}; // Increase the size of the body buffer
+    if (strlen(req->params) != 0) {
+        snprintf(body, sizeof(body), "GET Nilai Akhir with params: %s", req->params); // Use snprintf to prevent buffer overflow
     } else {
-        sprintf(body, "GET Nilai Akhir");
+        snprintf(body, sizeof(body), "GET Nilai Akhir");
     }
     send_response(client_socket, "200 OK", "text/plain", body);
 }
@@ -48,7 +47,7 @@ void GET_example(int client_socket, const char* params){
  * @return void
  */
 
-void POST_example(int client_socket, const char* body, const char* content_type) {
+void POST_example(int client_socket, HttpRequest* req) {
     char response[MAX] = {0};
     char keys[10][256]; 
     char values[10][256]; 
@@ -59,24 +58,16 @@ void POST_example(int client_socket, const char* body, const char* content_type)
     memset(response, 0, sizeof(response));
 
     bool is_valid = true;
-    if (strcmp(content_type, "text/plain") == 0) {
-        parser_text_plain(body, keys, values, &count);
-    } else if (strcmp(content_type, "application/json") == 0) {
-        parse_JSON(body, keys, values, &count);
-    } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
-        parser_url_encoded(body, keys, values, &count);
+    if (strcmp(req->content_type, "text/plain") == 0) {
+        parser_text_plain(req->body, keys, values, &count);
+    } else if (strcmp(req->content_type, "application/json") == 0) {
+        parse_JSON(req->body, keys, values, &count);
+    } else if (strcmp(req->content_type, "application/x-www-form-urlencoded") == 0) {
+        parser_url_encoded(req->body, keys, values, &count);
     } else {
         sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
         is_valid = false;
     }
-
-    //debugger
-    // printf("body: %s\n", body);
-    // printf("count: %d\n", count);
-    // for (int i = 0; i < count; i++) {
-    //     printf("key: %s, value: %s\n", keys[i], values[i]);
-    // }
-
     //make response if the data is valid
     if(is_valid){
         generate_response(response, keys, values, count);
@@ -89,31 +80,23 @@ void POST_example(int client_socket, const char* body, const char* content_type)
 /**
  * same as the POST method but it's used for PUT method
  */
-void PUT_example(int client_socket, const char* body, const char* content_type) {
+void PUT_example(int client_socket, HttpRequest *req) {
     char response[MAX] = {0};
     char keys[10][256];
     char values[10][256]; 
     int count = 0;
 
     bool isValid = true;
-    if (strcmp(content_type, "text/plain") == 0) {
-        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
-        // parser_text(body, key, value);
-    } else if (strcmp(content_type, "application/json") == 0) {
-        parse_JSON(body, keys, values, &count);
-    } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
-        sprintf(response, "{\"status\": \"submitted\", \"data\": \"%s\"}", body);
-        // parser_text(body, key, value);
+    if (strcmp(req->content_type, "text/plain") == 0) {
+        parser_text_plain(req->body, keys, values, &count);
+    } else if (strcmp(req->content_type, "application/json") == 0) {
+        parse_JSON(req->body, keys, values, &count);
+    } else if (strcmp(req->content_type, "application/x-www-form-urlencoded") == 0) {
+        parser_url_encoded(req->body, keys, values, &count);
     } else {
         sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
         isValid = false;
     }
-
-    //debugger
-    // printf("body: %s\n", body);
-    // for (int i = 0; i < count; i++) {
-    //     printf("key: %s, value: %s\n", keys[i], values[i]);
-    // }
 
     if(isValid){
         generate_response(response, keys, values, count);
@@ -132,7 +115,7 @@ void PUT_example(int client_socket, const char* body, const char* content_type) 
  * @param count: the count of the keys and values
  * @return void
  */
-void DELETE_example(int client_socket,const char* body, const char* content_type , char keys[][256], char values[][256], int* count){
+void DELETE_example(int client_socket, HttpRequest *req, char keys[][256], char values[][256], int* count){
     char response[MAX] = {0};
 
     if(*count > 0){
