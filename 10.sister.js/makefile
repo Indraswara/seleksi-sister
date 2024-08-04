@@ -3,10 +3,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Wno-unused
 OBJDIR = bin
 TARGET = server
-
+SRC = src
 # Source files
-SRCS = server.c controller.c parser.c route.c main.c util.c
-OBJS = $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
+SRCS = $(wildcard $(SRC)/*.c)
+OBJS = $(patsubst $(SRC)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 # Default target
 all: $(OBJDIR) $(TARGET)
@@ -20,7 +20,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 # Compile source files to object files
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean up build artifacts

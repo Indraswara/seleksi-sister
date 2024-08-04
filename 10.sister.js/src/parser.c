@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "../include/parser.h"
 
 void get_content_type(const char *headers, char* content_type) {
     const char *content_type_pattern = "Content-Type: ";

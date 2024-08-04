@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "route.h"
+#include "../include/route.h"
 
 #define MAX_ROUTES 100
 
@@ -20,8 +20,6 @@ void add_route(const char* method, const char* url, RouteHandler handler) {
 }
 
 void route_request(int client_socket, HttpRequest* req) {
-    char params[100];
-    parse_params(req->url, params);
 
     bool if_get = strcmp(req->method, "GET") == 0;
     bool if_delete = strcmp(req->method, "DELETE") == 0;
@@ -37,7 +35,7 @@ void route_request(int client_socket, HttpRequest* req) {
                 char keys[10][256];
                 char values[10][256];
                 int count = 0;
-                parser_url_encoded(params, keys, values, &count);
+                parser_url_encoded(req->params, keys, values, &count);
                 routes[i].handler(client_socket, req, keys, values, &count);
             }
             else{ //POST or PUT

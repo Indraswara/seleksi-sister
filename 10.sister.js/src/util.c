@@ -1,4 +1,4 @@
-#include "util.h"
+#include "../include/util.h"
 
 
 void generate_response(char response[MAX], char keys[][256], char values[][256], int count){

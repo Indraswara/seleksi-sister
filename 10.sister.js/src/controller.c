@@ -1,4 +1,4 @@
-#include "controller.h"
+#include "../include/controller.h"
 
 
 /**
@@ -55,7 +55,7 @@ void POST_example(int client_socket, HttpRequest* req) {
 
     memset(keys, 0, sizeof(keys));
     memset(values, 0, sizeof(values));
-    memset(response, 0, sizeof(response));
+    // memset(response, 0, sizeof(response));
 
     bool is_valid = true;
     if (strcmp(req->content_type, "text/plain") == 0) {

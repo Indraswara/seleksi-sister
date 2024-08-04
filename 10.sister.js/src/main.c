@@ -1,4 +1,4 @@
-#include "server.h"
+#include "../include/server.h"
 
 void random_handler(int client_socket, const char* body, const char* content_type) {
     char response[MAX] = "Random Handler";
