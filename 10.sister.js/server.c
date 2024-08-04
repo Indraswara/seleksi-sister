@@ -1,13 +1,14 @@
 #include "common.h"
 #include "controller.h"
 #include "route.h"
+#include "server.h"
 
 void custom_get_handler(int client_socket, const char* body, const char* content_type) {
     char response[MAX] = "Custom GET Handler";
     send_response(client_socket, "200 OK", "text/plain", response);
 }
 
-int main(int argc, char const* argv[]) {
+void start_server() {
     int server_fd, new_socket; 
     ssize_t valueRead; 
     struct sockaddr_in address;
@@ -43,11 +44,11 @@ int main(int argc, char const* argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    // Add default routes
-    add_route("GET", "/nilai-akhir", GET);
-    add_route("POST", "/submit", POST);
-    add_route("PUT", "/update", PUT);
-    add_route("DELETE", "/delete", DELETE);
+    // Add default routes for testing
+    add_route("GET", "/nilai-akhir", (void*) GET_example);
+    add_route("POST", "/submit", (void *) POST_example);
+    add_route("PUT", "/update", (void*) PUT_example);
+    add_route("DELETE", "/delete", (void *)DELETE_example);
 
     // Add custom routes
 
@@ -80,10 +81,10 @@ int main(int argc, char const* argv[]) {
         printf("Content-Type: %s\n", content_type);
 
         // Route the request
+
         route_request(method, url, new_socket, body, content_type);
 
         close(new_socket);
     }
     close(server_fd);
-    return 0;    
 }

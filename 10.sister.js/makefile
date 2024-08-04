@@ -1,11 +1,11 @@
 # Variables
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Wno-unused
 OBJDIR = bin
 TARGET = server
 
 # Source files
-SRCS = server.c controller.c parser.c route.c
+SRCS = server.c controller.c parser.c route.c main.c util.c
 OBJS = $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
 
 # Default target

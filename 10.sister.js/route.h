@@ -1,7 +1,8 @@
 #ifndef ROUTE_H
 #define ROUTE_H
-
-typedef void (*RouteHandler)(int, const char*, const char*);
+#include "common.h"
+#include "parser.h"
+typedef void (*RouteHandler)(int, const char*, const char*, char keys[][256], char values[][256], int* count);
 
 typedef struct {
     char method[10];

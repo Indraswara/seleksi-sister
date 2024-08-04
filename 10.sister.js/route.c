@@ -20,9 +20,29 @@ void add_route(const char* method, const char* url, RouteHandler handler) {
 }
 
 void route_request(const char* method, const char* url, int client_socket, const char* body, const char* content_type) {
-    for (int i = 0; i < route_count; i++) {
+    char params[100];
+    parse_params(url, params);
+
+    char* true_url = strtok((char*)url, "?");
+
+    bool if_get = strcmp(method, "GET") == 0;
+    bool if_delete = strcmp(method, "DELETE") == 0;
+    
+    for (int i = 0; i < route_count; i++){
         if (strcmp(routes[i].method, method) == 0 && strcmp(routes[i].url, url) == 0) {
-            routes[i].handler(client_socket, body, content_type);
+            if(if_get){
+                routes[i].handler(client_socket, params, content_type, NULL, NULL, NULL);
+            }
+            else if(if_delete){
+                char keys[10][256];
+                char values[10][256];
+                int count = 0;
+                parser_url_encoded(params, keys, values, &count);
+                routes[i].handler(client_socket, NULL, NULL, keys, values, &count);
+            }
+            else{
+                routes[i].handler(client_socket, body, content_type, NULL, NULL, NULL);
+            }
             return;
         }
     }
