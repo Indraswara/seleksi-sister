@@ -28,9 +28,9 @@ void send_response(int client_socket, const char* status, const char* content_ty
 void GET_example(int client_socket, HttpRequest *req){
     char body[MAX + 100] = {0}; // Increase the size of the body buffer
     if (strlen(req->params) != 0) {
-        snprintf(body, sizeof(body), "GET Nilai Akhir with params: %s", req->params); // Use snprintf to prevent buffer overflow
+        snprintf(body, sizeof(body), "GET with params: %s", req->params); // Use snprintf to prevent buffer overflow
     } else {
-        snprintf(body, sizeof(body), "GET Nilai Akhir");
+        snprintf(body, sizeof(body), "GET Only");
     }
     send_response(client_socket, "200 OK", "text/plain", body);
 }
