@@ -14,7 +14,7 @@ void submit_handler(int client_socket, const char* body, const char* content_typ
     char keys[10][256];
     char values[10][256];
     int count = 0;
-    
+
     memset(keys, 0, sizeof(keys));
     memset(values, 0, sizeof(values));
     memset(response, 0, sizeof(response));
@@ -51,7 +51,7 @@ void submit_handler(int client_socket, const char* body, const char* content_typ
 }
 
 int main(int argc, char const* argv[]) {
-
+    
     add_route("GET", "/random", (void*) random_handler);
     add_route("POST", "/sum", (void*) submit_handler);
     start_server();
