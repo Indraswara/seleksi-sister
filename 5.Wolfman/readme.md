@@ -1,5 +1,15 @@
-source: 
-- https://www.geeksforgeeks.org/how-to-perform-java-parallel-matrix-multiplication/ 
-- https://ecatue.gitlab.io/GPU2016/cookbook/matrix_multiplication_opencl/
-- https://www.c-sharpcorner.com/article/parallel-programming-with-openmp-in-cpp-matrix-multiplication-example/
-- https://numpy.org/install/
+# Wolfman 
+
+## Hasil Pengujian
+
+Hasil pengujian terdapat pada folder output. Setiap testcase yang ada akan memilik output sesuai dengan nama input
+
+Contoh:
+input 
+```sh
+32.txt
+```
+maka outputnya
+```
+32{bahasa_pemrograman}.txt
+```

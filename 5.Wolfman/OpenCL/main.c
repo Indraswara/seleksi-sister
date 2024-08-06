@@ -19,7 +19,15 @@ void printMatrix(double* matrix, int size) {
         printf("\n");
     }
 }
-
+/**
+ * fungsi untuk membaca file kernel.cl
+ * kernel.cl sendiri berfungsi untuk menampung kernel yang akan dijalankan
+ * kernel yang akan dijalankan adalah matrix multiplication
+ * @param path path file kernel.cl
+ * @param buf buffer untuk menampung isi file kernel.cl
+ * @return size dari file kernel.cl
+ * 
+ */
 long LoadOpenCLKernel(const char *path, char **buf) {
     FILE *fp = fopen(path, "r");
     if (!fp) return -1;
@@ -33,11 +41,14 @@ long LoadOpenCLKernel(const char *path, char **buf) {
     return size;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv){
     if (argc != 2) {
         printf("Usage: %s <filename.txt>\n", argv[0]);
         return EXIT_FAILURE;
     }
+    /**
+     * membuka file yang akan dibaca
+     */
     const char* filename = argv[1];
     FILE* file = fopen(filename, "r");
     if (!file) {
@@ -46,6 +57,9 @@ int main(int argc, char** argv) {
     }
     int size;
     fscanf(file, "%d", &size);
+    /**
+     * alokasi memori untuk matriks A, B, dan C
+     */
     unsigned int size_A = size * size;
     unsigned int size_B = size * size;
     unsigned int size_C = size * size;
@@ -53,36 +67,61 @@ int main(int argc, char** argv) {
     double* h_B = (double*) malloc(sizeof(double) * size_B);
     double* h_C = (double*) malloc(sizeof(double) * size_C);
     for (int i = 0; i < size_A; i++) {
-        fscanf(file, "%lf", &h_A[i]);
+        fscanf(file, "%lf", &h_A[i]); //input matrix a 
     }
     for (int i = 0; i < size_B; i++) {
-        fscanf(file, "%lf", &h_B[i]);
+        fscanf(file, "%lf", &h_B[i]); //input matrix b
     }
     fclose(file);
     int err;
+
+    /**
+     * inisialisasi OpenCL
+     * inisialisasi device, context, command queue, program, kernel, dan memory object
+     * DEVICE: adalah device yang digunakan untuk menjalankan program OpenCL
+     * CONTEXT: adalah konteks dimana program OpenCL berjalan
+     * COMMAND: queue adalah antrian perintah yang akan dijalankan
+     * PROGRAM: adalah program OpenCL yang akan dijalankan
+     * KERNEL: adalah fungsi yang akan dijalankan
+     * MEMORYOBJECT: adalah objek yang digunakan untuk menyimpan data (d_A, d_B, d_C)
+     * 
+     */
     cl_device_id device_id;
     cl_context context;
     cl_command_queue commands;
     cl_program program;
     cl_kernel kernel;
     cl_mem d_A, d_B, d_C;
-    srand(2014);
+    srand(2014); 
     printf("Initializing OpenCL device...\n");
-    cl_uint dev_cnt = 0;
+    /**
+     * device dan platform 
+     * platform adalah perangkat lunak yang digunakan untuk menjalankan program OpenCL
+     */
+    cl_uint dev_cnt = 0; //melakukan inisialisasi device
     clGetPlatformIDs(0, 0, &dev_cnt);
-    cl_platform_id platform_ids[100];
+    cl_platform_id platform_ids[100]; //melakukan inisialisasi platform
     clGetPlatformIDs(dev_cnt, platform_ids, NULL);
-    int gpu = 1;
+    int gpu = 1; 
+    /**
+     * membuat device
+     */
     err = clGetDeviceIDs(platform_ids[0], gpu ? CL_DEVICE_TYPE_GPU : CL_DEVICE_TYPE_CPU, 1, &device_id, NULL);
     if (err != CL_SUCCESS) {
         printf("Error: Failed to create a device group!\n");
         return EXIT_FAILURE;
     }
+    /**
+     * membuat context
+     */
     context = clCreateContext(0, 1, &device_id, NULL, NULL, &err);
     if (!context) {
         printf("Error: Failed to create a compute context!\n");
         return EXIT_FAILURE;
     }
+    /**
+     * membuat command queue
+     */
     cl_queue_properties properties[] = {CL_QUEUE_PROPERTIES, 0, 0};
     commands = clCreateCommandQueueWithProperties(context, device_id, properties, &err);
     if (!commands) {
@@ -96,11 +135,17 @@ int main(int argc, char** argv) {
         perror("File read failed");
         return 1;
     }
+    /**
+     * membuat program dan kernel
+     */
     program = clCreateProgramWithSource(context, 1, (const char **) &KernelSource, NULL, &err);
     if (!program) {
         printf("Error: Failed to create compute program!\n");
         return EXIT_FAILURE;
     }
+    /**
+     * build program
+     */
     err = clBuildProgram(program, 0, NULL, NULL, NULL, NULL);
     if (err != CL_SUCCESS) {
         size_t len;
@@ -110,11 +155,17 @@ int main(int argc, char** argv) {
         printf("%s\n", buffer);
         exit(1);
     }
+    /**
+     * membuat kernel
+     */
     kernel = clCreateKernel(program, "matrixMul", &err);
     if (!kernel || err != CL_SUCCESS) {
         printf("Error: Failed to create compute kernel!\n");
         exit(1);
     }
+    /**
+     * membuat memory object
+     */
     d_A = clCreateBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(double) * size_A, h_A, &err);
     d_B = clCreateBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(double) * size_B, h_B, &err);
     d_C = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(double) * size_C, NULL, &err);
@@ -122,9 +173,16 @@ int main(int argc, char** argv) {
         printf("Error: Failed to allocate device memory!\n");
         exit(1);
     }
-    printf("Running matrix multiplication for matrices A and B of size %dx%d ...\n", size, size);
+    /**
+     * menjalankan kernel
+     */
     size_t localWorkSize[2] = {16, 16};
     size_t globalWorkSize[2] = {size, size};
+    /**
+     * set kernel arguments
+     * kernel arguments adalah argumen yang digunakan untuk menjalankan kernel
+     * kernel arguments terdiri dari d_C, d_A, d_B, wA, wC
+     */
     int wA = size;
     int wC = size;
     err = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&d_C);
@@ -136,22 +194,45 @@ int main(int argc, char** argv) {
         printf("Error: Failed to set kernel arguments! %d\n", err);
         exit(1);
     }
+    /**
+     * menjalankan kernel
+     * kernel akan dijalankan dengan menggunakan globalWorkSize dan localWorkSize
+     * globalWorkSize adalah ukuran dari matriks
+     * localWorkSize adalah ukuran dari work group
+     * work group adalah kelompok dari work item
+     * work item adalah unit terkecil dari kernel
+     */
     err = clEnqueueNDRangeKernel(commands, kernel, 2, NULL, globalWorkSize, localWorkSize, 0, NULL, NULL);
     if (err != CL_SUCCESS) {
         printf("Error: Failed to execute kernel! %d\n", err);
         exit(1);
     }
+    /**
+     * membaca hasil dari kernel
+     * hasil dari kernel akan disimpan di h_C
+     * 
+     */
     err = clEnqueueReadBuffer(commands, d_C, CL_TRUE, 0, sizeof(double) * size_C, h_C, 0, NULL, NULL);
     if (err != CL_SUCCESS) {
         printf("Error: Failed to read output array! %d\n", err);
         exit(1);
     }
-    printf("\nMatrix C (Results):\n");
+    // printf("\nMatrix C (Results):\n");
     printMatrix(h_C, size);
-    printf("Matrix multiplication completed...\n");
+    // printf("Matrix multiplication completed...\n");
+
+    /**
+     * 
+     * free memory
+     */
     free(h_A);
     free(h_B);
     free(h_C);
+
+    /**
+     * free OpenCL memory
+     * free device, context, command queue, program, kernel, memory object
+     */
     clReleaseMemObject(d_A);
     clReleaseMemObject(d_C);
     clReleaseMemObject(d_B);

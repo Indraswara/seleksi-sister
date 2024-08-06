@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <omp.h>
+#include <omp.h> //include this
 #include <fstream>
 #include <sstream>
 
@@ -35,6 +35,7 @@ int main(int argc, char* argv[]){
     }
     file.close();
 
+    #pragma omp parallel for collapse(2) //just call this lmao 
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
             double sum = 0;
@@ -45,18 +46,6 @@ int main(int argc, char* argv[]){
         }
     }
 
-    #pragma omp parallel for
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
-            double sum = 0;
-            for(int k = 0; k < N; k++){
-                sum += A[i][k] * B[k][j];
-            }
-            C[i][j] = sum;
-        }
-    }
-
-    // Print the result matrix
     cout << N << endl;
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
