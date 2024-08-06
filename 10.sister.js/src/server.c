@@ -60,15 +60,20 @@ void start_server() {
         printf("Request received:\n%s\n", buffer);
 
         //before used always empty the buffer
-        char method[10], url[100], body[MAX], headers[MAX], content_type[100];
         HttpRequest request = {0}; 
+        HttpResponse response = {0};
         memset(&request, 0, sizeof(HttpRequest));
+        memset(&response, 0, sizeof(HttpResponse));
 
 
 
         //parse the request
         // parse_request(buffer, method, url, body, headers);
+        /**
+         * khusus HttpRequest
+         */
         parse_request(buffer, request.method, request.url, request.body, request.headers);
+        // printf("METHOD: %s\n", request.method);
         get_content_type(request.headers, request.content_type);
         parse_params(request.url, request.params);
 
@@ -83,7 +88,7 @@ void start_server() {
         printf("Content-Type: %s\n", request.content_type);
 
         // Route the request
-        route_request(new_socket, &request);
+        route_request(new_socket, &request, &response);
         close(new_socket);
     }
     close(server_fd);

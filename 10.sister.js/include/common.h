@@ -18,7 +18,7 @@
 #include <string.h>
 #include <arpa/inet.h>
 
-#define MAX 1024
+#define MAX 2048
 #define PORT 8080 
 #define SA struct sockaddr
 

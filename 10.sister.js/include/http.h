@@ -1,7 +1,7 @@
 #ifndef HTTP_H
 #define HTTP_H
 
-#define MAX 1024
+#include "common.h"
 
 /**
  * @brief Struct for HTTP Request
@@ -31,6 +31,9 @@ typedef struct {
 typedef struct {
     char status[50];
     char response[MAX];
+    char keys[10][256]; //max 19 aja
+    char values[10][256]; //max 10 aja
+    int total_data;
 } HttpResponse;
 
 #endif // HTTP_H

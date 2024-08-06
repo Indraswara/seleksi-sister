@@ -1,5 +1,14 @@
 #include "../include/controller.h"
 
+void parse_body(const char* content_type, const char* body, char keys[][256], char values[][256], int* count) {
+    if (strcmp(content_type, "text/plain") == 0) {
+        parser_text_plain(body, keys, values, count);
+    } else if (strcmp(content_type, "application/json") == 0) {
+        parse_JSON(body, keys, values, count);
+    } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
+        parser_url_encoded(body, keys, values, count);
+    }
+}
 
 /**
  * function send response back to the client it's shown in the terminal for now 
@@ -18,122 +27,115 @@ void send_response(int client_socket, const char* status, const char* content_ty
     send(client_socket, response, strlen(response), 0);
 }
 
+
+/**
+ * function handle the request from the client
+ * @param client_socket: the client socket (for now 8080)
+ * @param req: the request that submitted by client
+ * @param res: the response that will be sent back to the client
+ * @return void
+ */
+void handle_request(int client_socket, HttpRequest* req, HttpResponse* res){
+    bool is_valid = true;
+
+
+    if (req->content_type[0] == '\0' && (strcmp(req->method, "POST") == 0 || strcmp(req->method, "PUT") == 0)) {
+        sprintf(res->response, "{\"status\": \"error\", \"message\": \"Content-Type header missing\"}");
+        send_response(client_socket, "400 Bad Request", "application/json", res->response);
+        return;
+    }
+
+    if (strcmp(req->method, "GET") == 0) {
+        if (strlen(req->params) != 0) {
+            snprintf(res->response, sizeof(res->response), "GET with params: %.2000s", req->params);
+        } else {
+            snprintf(res->response, sizeof(res->response), "GET Only");
+        }
+        send_response(client_socket, "200 OK", "text/plain", res->response);
+        return;
+    }
+
+    if (strcmp(req->method, "POST") == 0 || strcmp(req->method, "PUT") == 0){
+        parse_body(req->content_type, req->body, res->keys, res->values, &res->total_data);
+
+
+        if (!is_valid) {
+            strcat(res->status, "Unsupported content type");
+            sprintf(res->response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
+            send_response(client_socket, "400 Bad Request", "application/json", res->response);
+            return;
+        }
+        printf("method sebelum http: %s\n", req->method);
+        
+        generate_response_http(req, res);
+        send_response(client_socket, "200 OK", "application/json", res->response);
+        return;
+    }
+
+    if (strcmp(req->method, "DELETE") == 0){
+        if (res->total_data > 0) {
+            strcat(res->response, "{\"status\": \"deleted\", \"data\": {");
+            for (int i = 0; i < res->total_data; i++) {
+                int pair_length = strlen(res->keys[i]) + strlen(res->values[i]) + 6;
+                char* pair = malloc(pair_length * sizeof(char));
+                sprintf(pair, "\"%s\": \"%s\"", res->keys[i], res->values[i]);
+                strcat(res->response, pair);
+                if (i < res->total_data - 1) {
+                    strcat(res->response, ", ");
+                }
+                free(pair);
+            }
+            strcat(res->response, "}}");
+        } else {
+            strcat(res->response, "{\"status\": \"deleted\", \"data\": {}}");
+        }
+        send_response(client_socket, "200 OK", "application/json", res->response);
+        return;
+    }
+
+    sprintf(res->response, "{\"status\": \"error\", \"message\": \"Unsupported HTTP method\"}");
+    send_response(client_socket, "405 Method Not Allowed", "application/json", res->response);
+}
+
 /**
  * function get the nilai akhir from the client
  * @param client_socket: the client socket (for now 8080)
- * @param params: the params that submitted by client
+ * @param req: the request that submitted by client
+ * @param res: the response that will be sent back to the client
  * @return void
  */
 
-void GET_example(int client_socket, HttpRequest *req){
-    char body[MAX + 100] = {0}; // Increase the size of the body buffer
-    if (strlen(req->params) != 0) {
-        snprintf(body, sizeof(body), "GET with params: %s", req->params); // Use snprintf to prevent buffer overflow
-    } else {
-        snprintf(body, sizeof(body), "GET Only");
-    }
-    send_response(client_socket, "200 OK", "text/plain", body);
+void GET_example(int client_socket, HttpRequest *req, HttpResponse* res) {
+    handle_request(client_socket, req, res);
 }
 
 
 /**
  * function for POST method 
  * @param client_socket: the client socket (for now 8080)
- * @param body: the body that submitted by client
- * @param content_type: the type of content that submitted by client
- * 1. text/plain
- * 2. application/json
- * 3. application/x-www-form-urlencoded
+ * @param req: the request that submitted by client
+ * @param res: the response that will be sent back to the client
  * @return void
  */
 
-void POST_example(int client_socket, HttpRequest* req) {
-    char response[MAX] = {0};
-    char keys[10][256]; 
-    char values[10][256]; 
-    int count = 0;
-
-    memset(keys, 0, sizeof(keys));
-    memset(values, 0, sizeof(values));
-    // memset(response, 0, sizeof(response));
-
-    bool is_valid = true;
-    if (strcmp(req->content_type, "text/plain") == 0) {
-        parser_text_plain(req->body, keys, values, &count);
-    } else if (strcmp(req->content_type, "application/json") == 0) {
-        parse_JSON(req->body, keys, values, &count);
-    } else if (strcmp(req->content_type, "application/x-www-form-urlencoded") == 0) {
-        parser_url_encoded(req->body, keys, values, &count);
-    } else {
-        sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
-        is_valid = false;
-    }
-    //make response if the data is valid
-    if(is_valid){
-        generate_response(response, keys, values, count);
-        strcat(response, "}}"); 
-    }
-
-    send_response(client_socket, "200 OK", "application/json", response);
+void POST_example(int client_socket, HttpRequest* req, HttpResponse* res) {
+    handle_request(client_socket, req, res);
 }
 
 /**
  * same as the POST method but it's used for PUT method
  */
-void PUT_example(int client_socket, HttpRequest *req) {
-    char response[MAX] = {0};
-    char keys[10][256];
-    char values[10][256]; 
-    int count = 0;
-
-    bool isValid = true;
-    if (strcmp(req->content_type, "text/plain") == 0) {
-        parser_text_plain(req->body, keys, values, &count);
-    } else if (strcmp(req->content_type, "application/json") == 0) {
-        parse_JSON(req->body, keys, values, &count);
-    } else if (strcmp(req->content_type, "application/x-www-form-urlencoded") == 0) {
-        parser_url_encoded(req->body, keys, values, &count);
-    } else {
-        sprintf(response, "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
-        isValid = false;
-    }
-
-    if(isValid){
-        generate_response(response, keys, values, count);
-        send_response(client_socket, "200 OK", "application/json", response);
-    }
-    else{
-        send_response(client_socket, "400 Bad Request", "application/json", response);
-    }
+void PUT_example(int client_socket, HttpRequest *req, HttpResponse* res) {
+    handle_request(client_socket, req, res);
 }
 
 /**
  * function for DELETE method
  * @param client_socket: the client socket (for now 8080)
- * @param keys: the keys that submitted by client
- * @param values: the values that submitted by client
- * @param count: the count of the keys and values
+ * @param req: the request that submitted by client
+ * @param res: the response that will be sent back to the client
  * @return void
  */
-void DELETE_example(int client_socket, HttpRequest *req, char keys[][256], char values[][256], int* count){
-    char response[MAX] = {0};
-
-    if(*count > 0){
-        strcat(response, "{\"status\": \"deleted\", \"data\": {");
-        for(int i = 0; i < *count; i++){
-            int pair_length = strlen(keys[i]) + strlen(values[i]) + 6; // 6 for the surrounding quotes and colons
-            char* pair = malloc(pair_length * sizeof(char));
-            sprintf(pair, "\"%s\": \"%s\"", keys[i], values[i]);
-            strcat(response, pair);
-            if(i < *count - 1){
-                strcat(response, ", ");
-            }
-            free(pair);
-        }
-        strcat(response, "}}");
-    } else {
-        strcat(response, "{\"status\": \"deleted\", \"data\": {}}");
-    }
-
-    send_response(client_socket, "200 OK", "application/json", response);
+void DELETE_example(int client_socket, HttpRequest *req, HttpResponse* res) {
+    handle_request(client_socket, req, res);
 }

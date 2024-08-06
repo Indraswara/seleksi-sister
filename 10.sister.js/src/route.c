@@ -19,7 +19,7 @@ void add_route(const char* method, const char* url, RouteHandler handler) {
     }
 }
 
-void route_request(int client_socket, HttpRequest* req) {
+void route_request(int client_socket, HttpRequest* req, HttpResponse* res) {
 
     bool if_get = strcmp(req->method, "GET") == 0;
     bool if_delete = strcmp(req->method, "DELETE") == 0;
@@ -29,17 +29,17 @@ void route_request(int client_socket, HttpRequest* req) {
     for (int i = 0; i < route_count; i++){
         if (strcmp(routes[i].method, req->method) == 0 && strcmp(routes[i].url, req->url) == 0) {
             if(if_get){
-                routes[i].handler(client_socket, req, NULL, NULL, NULL);
+                routes[i].handler(client_socket, req, res);
             }
             else if(if_delete){
                 char keys[10][256];
                 char values[10][256];
                 int count = 0;
                 parser_url_encoded(req->params, keys, values, &count);
-                routes[i].handler(client_socket, req, keys, values, &count);
+                routes[i].handler(client_socket, req, res);
             }
             else{ //POST or PUT
-                routes[i].handler(client_socket, req, NULL, NULL, NULL);
+                routes[i].handler(client_socket, req, res);
             }
             return;
         }

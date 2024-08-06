@@ -14,7 +14,7 @@
  * 
  * jadi ini sebagai generator response untuk di kirim ke client pada method POST dan PUT(?) 
  */
-void generate_response(char response[MAX], char keys[][256], char values[][256], int count);
+void generate_response(char response[MAX], char keys[][256], char values[][256], int count, const char* content_type);
 
 
 /**
@@ -25,6 +25,6 @@ void generate_response(char response[MAX], char keys[][256], char values[][256],
  * @param values: array of values
  * @param count: jumlah key-value pairs
  */
-void generate_response_http(HttpRequest* req, HttpResponse* res, char keys[][256], char values[][256], int count);
+void generate_response_http(HttpRequest* req, HttpResponse* res);
 
 #endif

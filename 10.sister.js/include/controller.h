@@ -12,15 +12,17 @@
 //GET METHOD Controller
 void send_response(int client_socket, const char* status, const char* content_type, const char* body);
 
-void GET_example(int socket, HttpRequest* req); 
+void handle_request(int client_socket, HttpRequest* req, HttpResponse* res);
+
+void GET_example(int socket, HttpRequest* req, HttpResponse* res); 
 
 //POST METHOD Controller
-void POST_example(int client_socket, HttpRequest* req); 
+void POST_example(int client_socket, HttpRequest* req, HttpResponse* res); 
 
 //PUT METHOD Controller 
-void PUT_example(int client_socket, HttpRequest* req); 
+void PUT_example(int client_socket, HttpRequest* req, HttpResponse* res); 
 
 //DELETE METHOD Controller
-void DELETE_example(int client_socket, HttpRequest* req, char keys[][256], char values[][256], int* count);
+void DELETE_example(int client_socket, HttpRequest* req, HttpResponse* res);
 
 #endif
