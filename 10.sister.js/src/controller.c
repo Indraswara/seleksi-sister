@@ -1,13 +1,26 @@
 #include "../include/controller.h"
 
+
 void parse_body(const char* content_type, const char* body, char keys[][256], char values[][256], int* count) {
+    printf("BODY: %s\n", body);
     if (strcmp(content_type, "text/plain") == 0) {
-        parser_text_plain(body, keys, values, count);
+        char *temp = strtok(body, " ");
+        parser_text_plain(temp, keys, values, count);
+        return; 
     } else if (strcmp(content_type, "application/json") == 0) {
         parse_JSON(body, keys, values, count);
+        return;
     } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
         parser_url_encoded(body, keys, values, count);
+        return;
     }
+    
+
+    // printf("=====================================\n");
+    // printf("DATA: %d\n", *count);
+    // for (int i = 0; i < *count; i++) {
+    //     printf("Key: %s, Value: %s\n", keys[i], values[i]);
+    // }
 }
 
 /**
@@ -38,7 +51,7 @@ void send_response(int client_socket, const char* status, const char* content_ty
 void handle_request(int client_socket, HttpRequest* req, HttpResponse* res){
     bool is_valid = true;
 
-
+    memset(res->response, 0, sizeof(res->response));
     if (req->content_type[0] == '\0' && (strcmp(req->method, "POST") == 0 || strcmp(req->method, "PUT") == 0)) {
         sprintf(res->response, "{\"status\": \"error\", \"message\": \"Content-Type header missing\"}");
         send_response(client_socket, "400 Bad Request", "application/json", res->response);
@@ -69,6 +82,7 @@ void handle_request(int client_socket, HttpRequest* req, HttpResponse* res){
         
         generate_response_http(req, res);
         send_response(client_socket, "200 OK", "application/json", res->response);
+        memset(res->response, 0, sizeof(res->response));
         return;
     }
 

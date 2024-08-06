@@ -32,10 +32,7 @@ void route_request(int client_socket, HttpRequest* req, HttpResponse* res) {
                 routes[i].handler(client_socket, req, res);
             }
             else if(if_delete){
-                char keys[10][256];
-                char values[10][256];
-                int count = 0;
-                parser_url_encoded(req->params, keys, values, &count);
+                parser_url_encoded(req->params, res->keys, res->values, &res->total_data);
                 routes[i].handler(client_socket, req, res);
             }
             else{ //POST or PUT

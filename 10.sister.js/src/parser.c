@@ -45,54 +45,69 @@ void params_to_pairs(char* params, char keys[][256], char values[][256], int* co
 }
 
 
-void parse_request(const char *request, char *method, char *url, char *body, char *headers){
+void parse_request(const char *request, char *method, char *url, char *body, char *headers) {
     // Create a mutable copy of the request
     char *req_copy = strdup(request);
     char *line = req_copy;
-
+    
     // Parse the first line to get the method and URL
     sscanf(line, "%s %s", method, url);
-
+    
     // Initialize headers and body buffers
     headers[0] = '\0';
     body[0] = '\0';
 
     // Move to the end of the first line
-    line = strstr(line, "\r\n") + 2;
-
+    char *next_line = strstr(line, "\r\n");
+    if (!next_line) {
+        free(req_copy);
+        return;  // Malformed request, no headers or body
+    }
+    line = next_line + 2;
+    
     // Determine if we are parsing headers or body
     bool is_body = false;
-
-    while(*line){
-        char *next_line = strstr(line, "\r\n");
-        if(!next_line) next_line = line + strlen(line);
-
-        if(!is_body){
-            if (next_line == line) {
+    while (*line) {
+        next_line = strstr(line, "\r\n");
+        if (!next_line) {
+            next_line = line + strlen(line);
+        }
+        
+        if (!is_body) {
+            if (line == next_line) {
                 is_body = true; // Empty line signifies end of headers
-            }else{
+            } else {
                 // Append header and add newline
                 strncat(headers, line, next_line - line);
                 strcat(headers, "\n");
             }
-        }else{
-            // Append body and add newline
-            strncat(body, line, next_line - line);
-            strcat(body, "\n");
+        } else {
+            // Append remaining content to body
+            if(headers == "content-type: text/plain"){
+                char* temp = strstr(line, "{");
+                strcat(body, temp);
+                break;
+            }
+            strcat(body, line);
+            break;  // No need to process line by line for body
         }
-
+        
         // Move to the next line
         line = next_line + 2;
+        if (line >= req_copy + strlen(req_copy)) {
+            break;  // Prevent going beyond the end of the string
+        }
     }
-
-    // Remove the trailing newline character from the body, if present
-    size_t body_len = strlen(body);
-    if (body_len > 0 && body[body_len - 1] == '\n') {
-        body[body_len - 1] = '\0';
+    
+    // Remove the trailing newline character from the headers, if present
+    size_t headers_len = strlen(headers);
+    if (headers_len > 0 && headers[headers_len - 1] == '\n') {
+        headers[headers_len - 1] = '\0';
     }
-
+    
     // Free the duplicated request copy
     free(req_copy);
+    // Remove the line that frees the body variable
 }
 
 
