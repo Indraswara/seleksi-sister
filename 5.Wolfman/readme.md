@@ -13,3 +13,7 @@ maka outputnya
 ```
 32{bahasa_pemrograman}.txt
 ```
+
+
+## Unexpected Event 
+folder input dan output terlalu besar keknya saya taruh di dalam link yang terpisah aja nanti dari sini. Ehe. 
