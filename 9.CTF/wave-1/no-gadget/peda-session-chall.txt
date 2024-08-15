@@ -1,0 +1,3 @@
+break *main+40
+break *vulnerable_function+0
+
