@@ -1,4 +1,6 @@
 // OpenCL Kernel
+
+// bagian ini adalah kernel.cl yang akan dipanggil oleh main program 
 __kernel void matrixMul(
     __global double* C, 
     __global double* A, 

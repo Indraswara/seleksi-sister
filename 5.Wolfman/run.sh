@@ -23,4 +23,10 @@ gcc -o kernel main.c -lOpenCL
 ./kernel "../$input_file" > "../output/${base_name}openCL.txt"
 cd ..
 
+## openMP 
+cd OpenMP
+g++ -o app main.cpp -fopenmp
+./app "../$input_file" > "../output/${base_name}openMP.txt"
+cd ..
+
 echo "Outputs have been saved to output/${base_name}CUDA.txt, output/${base_name}Py.txt, and output/${base_name}Java.txt"
