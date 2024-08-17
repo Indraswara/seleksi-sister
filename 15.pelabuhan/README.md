@@ -2,6 +2,8 @@
 
 ## Code 
 kode yang digunakan ada di folder react-expense-tracker-backend
+atau bisa akses di [link](https://github.com/Indraswara/expense-tracker)
+penjelasan repository lebih lengkap untuk dockerize ada di dalam pdf pelabuhan
 
 ## Dokumen 
 penjelesan lebih lengkap bisa dilihat di Pelabuhan.pdf terkait 
