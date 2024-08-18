@@ -1,0 +1,13 @@
+apiVersion: v1 # versi dari API yang digunakan
+kind: Service # jenis resource yang akan dibuat
+metadata: # metadata dari resource yang akan dibuat
+  name: expense-tracker-service # nama service
+spec: # spesifikasi dari service
+  type: NodePort # tipe service yang akan dibuat
+  selector: # selector untuk menentukan pod yang akan diatur oleh service
+    app: expense-tracker # label app dengan value expense-tracker
+  ports: # port yang akan diexpose oleh service
+    - protocol: TCP # protokol yang digunakan
+      port: 80 # port 80
+      targetPort: 80 # port yang dituju
+      nodePort: 30000 # port yang akan diexpose ke node

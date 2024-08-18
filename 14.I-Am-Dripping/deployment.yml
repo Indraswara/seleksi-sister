@@ -1,0 +1,22 @@
+# bagian ini untuk mendefinisikan deployment
+apiVersion: apps/v1
+# kind untuk mendefinisikan jenis resource yang akan dibuat
+kind: Deployment
+# metadata untuk mendefinisikan metadata dari resource yang akan dibuat
+metadata:
+  name: expense-tracker-deployment # nama deployment
+spec: # spesifikasi dari deployment
+  replicas: 1 # jumlah replika yang akan dibuat
+  selector: # selector untuk menentukan pod yang akan diatur oleh deployment
+    matchLabels: # label yang akan dijadikan acuan oleh selector
+      app: expense-tracker # label app dengan value expense-tracker
+  template: # template untuk mendefinisikan pod yang akan dibuat
+    metadata: # metadata dari pod yang akan dibuat
+      labels: # label dari pod yang akan dibuat
+        app: expense-tracker # label app dengan value expense-tracker
+    spec: # spesifikasi dari pod yang akan dibuat
+      containers: # container yang akan dijalankan oleh pod
+      - name: expense-tracker # nama container
+        image: kiiiro/kubernetes-dripping:latest # image yang akan digunakan 
+        ports: # port yang akan diexpose oleh container
+        - containerPort: 80 # port 80
