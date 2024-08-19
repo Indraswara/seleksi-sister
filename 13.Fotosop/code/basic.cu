@@ -1,4 +1,4 @@
-#include "basic.h"
+#include "../lib/basic.h"
 
 
 #define CUDA_CHECK_ERROR(call)                                            \

@@ -1,4 +1,4 @@
-#include "sobel.h"
+#include "../lib/sobel.h"
 #include <cmath>
 
 __global__ void sobelFilterKernel(float* inputImage, float* outputImage, int width, int height){

@@ -11,7 +11,7 @@
 - [ ] 9. CTF
 - [X] 10. Sister.js
 - [ ] 11. Jancuk Pristail 
-- [ ] 12. Benchmarking 
+- [X] 12. Benchmarking 
 - [X] 13. Fotosop 
 - [X] 14. I Am Dripping 
 - [X] 15. Pelabuhan
