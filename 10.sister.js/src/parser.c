@@ -1,5 +1,6 @@
 #include "../include/parser.h"
 
+
 void get_content_type(const char *headers, char* content_type) {
     const char *content_type_pattern = "Content-Type: ";
     char *content_type_start = strstr(headers, content_type_pattern);
@@ -83,7 +84,7 @@ void parse_request(const char *request, char *method, char *url, char *body, cha
             }
         } else {
             // Append remaining content to body
-            if(headers == "content-type: text/plain"){
+            if(strcmp(headers, "content-type: text/plain") == 0){
                 char* temp = strstr(line, "{");
                 strcat(body, temp);
                 break;
@@ -417,4 +418,3 @@ void parse_JSON(const char* body, char keys[][256], char values[][256], int* cou
         while(*cursor && (*cursor == ' ' || *cursor == '\n' || *cursor == '\r' || *cursor == '\t' || *cursor == ',')) cursor++;
     }
 }
-

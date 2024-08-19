@@ -4,7 +4,7 @@
 void parse_body(const char* content_type, const char* body, char keys[][256], char values[][256], int* count) {
     printf("BODY: %s\n", body);
     if (strcmp(content_type, "text/plain") == 0) {
-        char *temp = strtok(body, " ");
+        char *temp = strtok((char *)body, " ");
         parser_text_plain(temp, keys, values, count);
         return; 
     } else if (strcmp(content_type, "application/json") == 0) {
@@ -13,16 +13,10 @@ void parse_body(const char* content_type, const char* body, char keys[][256], ch
     } else if (strcmp(content_type, "application/x-www-form-urlencoded") == 0) {
         parser_url_encoded(body, keys, values, count);
         return;
+    } else{
+        send_response(400, "Bad Request", "application/json", "{\"status\": \"error\", \"message\": \"Unsupported content type\"}");
     }
-    
-
-    // printf("=====================================\n");
-    // printf("DATA: %d\n", *count);
-    // for (int i = 0; i < *count; i++) {
-    //     printf("Key: %s, Value: %s\n", keys[i], values[i]);
-    // }
 }
-
 /**
  * function send response back to the client it's shown in the terminal for now 
  * @param client_socket: the client socket
