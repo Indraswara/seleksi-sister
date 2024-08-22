@@ -7,7 +7,7 @@
 - [X] 5. wolfman|Sigma 
 - [ ] 6. McLarren 
 - [ ] 7. MonkeDB 
-- [ ] 8. Carpal Tunnel System 
+- [X] 8. Carpal Tunnel System 
 - [ ] 9. CTF
 - [X] 10. Sister.js
 - [ ] 11. Jancuk Pristail 
