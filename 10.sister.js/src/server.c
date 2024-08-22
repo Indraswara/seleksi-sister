@@ -48,8 +48,9 @@ void start_server() {
     add_route("POST", "/submit", (void *) POST_example);
     add_route("PUT", "/update", (void*) PUT_example);
     add_route("DELETE", "/delete", (void *)DELETE_example);
-
+    
     while(1){
+        printf("Listening on port %d\n", PORT);
         if ((new_socket = accept(server_fd, (SA*)&address, &addrlen)) < 0) {
             perror("accept");
             exit(EXIT_FAILURE);

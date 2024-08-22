@@ -1,0 +1,20 @@
+Java execution time: 0.60
+seconds
+PHP execution time: 14.15
+seconds
+C++ execution time: 0.00
+seconds
+Rust execution time: 0.00
+seconds
+Ruby execution time: 0.10
+seconds
+Python execution time: 35.88
+seconds
+Perl execution time: 96.82
+seconds
+JavaScript execution time: 4.07
+seconds
+Go execution time: 5.12
+seconds
+C execution time: 0.00
+seconds

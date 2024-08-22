@@ -17,7 +17,7 @@ set(CUDA_ARCHITECTURES "60")
 include_directories(${CUDA_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 # Add the executable
-add_executable(app main.cu basic.cu gaussian.cu sobel.cu)
+add_executable(app main.cu ./code/basic.cu ./code/gaussian.cu ./code/sobel.cu)
 
 # Link libraries
 target_link_libraries(app ${CUDA_LIBRARIES} ${OpenCV_LIBS} dl rt pthread)

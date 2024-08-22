@@ -1,5 +1,4 @@
 import sys
-import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 
 def read_matrices(filename):
@@ -13,20 +12,28 @@ def read_matrices(filename):
             f.readline()  # Skip empty line
             for _ in range(n):
                 matrix2.append(list(map(float, f.readline().strip().split())))
-        return n, np.array(matrix1, dtype=np.float64), np.array(matrix2, dtype=np.float64)
+        return n, matrix1, matrix2
     except Exception as e:
         print(f"Error reading file: {e}")
         sys.exit(1)
 
+def dot_product(row, col):
+    return sum(x * y for x, y in zip(row, col))
+
+def get_column(matrix, col_index):
+    return [row[col_index] for row in matrix]
+
 def multiply_chunk(matrix1, matrix2, row_start, row_end, n):
-    result_chunk = np.zeros((row_end - row_start, n), dtype=np.float64)
+    result_chunk = []
     for i in range(row_start, row_end):
+        result_row = []
         for j in range(n):
-            result_chunk[i - row_start, j] = np.dot(matrix1[i, :], matrix2[:, j])
+            result_row.append(dot_product(matrix1[i], get_column(matrix2, j)))
+        result_chunk.append(result_row)
     return result_chunk
 
 def parallel_matrix_multiplication(matrix1, matrix2, n, num_workers=4):
-    result_matrix = np.zeros((n, n), dtype=np.float64)
+    result_matrix = [[0.0 for _ in range(n)] for _ in range(n)]
     chunk_size = (n + num_workers - 1) // num_workers  # Ceiling division
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
@@ -39,7 +46,8 @@ def parallel_matrix_multiplication(matrix1, matrix2, n, num_workers=4):
         for future in futures:
             result_chunk = future.result()
             row_start = idx * chunk_size
-            result_matrix[row_start:row_start + result_chunk.shape[0], :] = result_chunk
+            for row_idx, row in enumerate(result_chunk):
+                result_matrix[row_start + row_idx] = row
             idx += 1
 
     return result_matrix

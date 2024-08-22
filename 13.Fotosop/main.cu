@@ -1,7 +1,6 @@
-#include "basic.h"
-#include "gaussian.h"
-#include "sobel.h"
-
+#include "./lib/basic.h"
+#include "./lib/gaussian.h"
+#include "./lib/sobel.h"
 
 using namespace std; 
 
