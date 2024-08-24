@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mariadb1: # ini adalah nama service (container) yang akan dibuat
+    image: mariadb:11.5 # ini adalah image yang akan digunakan
+    container_name: mariadb1 # ini adalah nama container
+    environment:  # ini adalah environment variable yang akan digunakan
+      MARIADB_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%' # ini biar bisa diakses dari luar
+      MARIADB_REPLICATION_MODE: 'master'
+      MARIADB_REPLICATION_USER: 'repl_user'
+      MARIADB_REPLICATION_PASSWORD: 'repl_password'
+    volumes: # ini adalah volume yang akan digunakan
+      - mariadb1_volume:/var/lib/mysql
+    networks: 
+      - mariadb_network
+    ports: 
+      - 3308:3306 # ini adalah port yang akan diexpose port localhost:3308 -> container:3306
+    command: --server-id=1 --log-bin=mysql-bin --binlog-format=MIXED # ini adalah command yang akan dijalankan, command ini akan membuat server id 1, membuat log bin mysql-bin, dan binlog format mixed
+
+  mariadb2: # ini adalah nama service (container) yang akan dibuat
+    image: mariadb:11.5 # ini adalah image yang akan digunakan
+    container_name: mariadb2
+    environment: 
+      MARIADB_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%' # ini biar bisa diakses dari luar
+      MARIADB_REPLICATION_MODE: 'master' 
+      MARIADB_REPLICATION_USER: 'repl_user'
+      MARIADB_REPLICATION_PASSWORD: 'repl_password'
+    volumes: # ini adalah volume yang akan digunakan
+      - mariadb2_volume:/var/lib/mysql
+    networks:
+      - mariadb_network
+    ports: 
+      - 3309:3306 # ini adalah port yang akan diexpose port localhost:3309 -> container:3306
+    command: --server-id=2 --log-bin=mysql-bin --binlog-format=MIXED 
+
+volumes: 
+  mariadb1_volume:
+  mariadb2_volume:
+
+networks: 
+  mariadb_network:

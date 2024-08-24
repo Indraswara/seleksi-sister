@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mariadb: 
+    image: mariadb:11.5
+    container_name: mariadb
+    environment: 
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MARIADB_ROOT_PASSWORD: indra
+    volumes: 
+      - mariadb_volume:/var/lib/mysql
+    networks:
+      - mariadb_network
+    ports: 
+      - 3308:3306
+
+volumes: 
+  mariadb_volume:
+
+networks: 
+  mariadb_network:
