@@ -3,10 +3,9 @@ version: '3.8'
 services:
   mariadb: 
     image: mariadb:11.5
-    container_name: mariadb
+    container_name: mariadb_test
     environment: 
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MARIADB_ROOT_PASSWORD: indra
+      MARIADB_ROOT_PASSWORD: root
     volumes: 
       - mariadb_volume:/var/lib/mysql
     networks:
