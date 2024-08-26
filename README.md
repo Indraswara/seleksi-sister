@@ -13,23 +13,23 @@ Mental-Mental Support gweh
 
 ## Task completed
 - [ ] 1. #AJEGILE 
-- [X] 2. GNU-Linux: ![doc](./2.GNU-Linux/GNU-Linux.pdf)
-- [X] 3. Transister: ![doc](./3.4bit/2nm%20Transister.pdf)
+- [X] 2. GNU-Linux: [doc](./2.GNU-Linux/GNU-Linux.pdf)
+- [X] 3. Transister: [doc](./3.4bit/2nm%20Transister.pdf)
 - [ ] 4. Cisco
 - [X] 5. wolfman|Sigma
 - [ ] 6. McLarren 
-- [X] 7. MonkeDB: ![doc](./7.monkeDB/README.md)
-- [X] 8. Carpal Tunnel System: ![doc](./8.Carpal/CARPAL-Dripping.pdf)
+- [X] 7. MonkeDB: [doc](./7.monkeDB/README.md)
+- [X] 8. Carpal Tunnel System: [doc](./8.Carpal/CARPAL-Dripping.pdf)
 - [ ] 9. CTF: GUA SKILL ISSUE
 - [X] 10. Sister.js: 
 - [ ] 11. Jancuk Pristail 
-- [X] 12. Benchmarking: ![doc](./12.benchmark/README.md)
-- [X] 13. Fotosop: ![doc](./13.Fotosop/README.md)
-- [X] 14. I Am Dripping: ![doc](./14.I-Am-Dripping/README.md)
-- [X] 15. Pelabuhan: ![doc](./15.pelabuhan/Pelabuhan.pdf)
+- [X] 12. Benchmarking: [doc](./12.benchmark/README.md)
+- [X] 13. Fotosop: [doc](./13.Fotosop/README.md)
+- [X] 14. I Am Dripping: [doc](./14.I-Am-Dripping/README.md)
+- [X] 15. Pelabuhan: [doc](./15.pelabuhan/Pelabuhan.pdf)
 - [ ] 16. BMI 
-- [X] 17. klak-klak: ![doc](./17.calc/README.md)
-- [X] 18. TTKI: ![doc](./18.TTKI/TTKI.pdf)
+- [X] 17. klak-klak: [doc](./17.calc/README.md)
+- [X] 18. TTKI: [doc](./18.TTKI/TTKI.pdf)
 
 ## Note
 ada beberapa soal yang dikerjakan pada linux (ubuntu 24.04) dan windows 
