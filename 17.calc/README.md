@@ -54,3 +54,10 @@ untuk exit ketik 'exit'
 Masukkan operasi: 5 + 3 * 2 ^ 2
 Result: 17
 Masukkan operasi: exit
+
+## How To Run 
+pastikan dulu sudah menginstall perl pada windows, linux, atau mac anda.
+dan jalankan command berikut
+```sh 
+perl main.pl
+```

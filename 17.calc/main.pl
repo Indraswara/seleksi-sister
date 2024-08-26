@@ -32,8 +32,7 @@ sub decrement{
 
 sub negate{
     my ($n) = @_;
-    my $negated = (~$n + 1);
-    $negated = unpack('q', pack('q', $negated));
+    my $negated = subtract(0, $n);
     return $negated;
 }
 
@@ -58,11 +57,9 @@ ADD_LOOP:
 sub subtract{
     my ($a, $b) = @_;
     
-    # Convert $b to its two's complement form
     $b = ~$b;
     my $carry = 1;
 
-    # Use goto to simulate the loop for adding 1 to $b
     convert_to_twos_complement:
     {
         my $sum = $b ^ $carry;
@@ -71,11 +68,9 @@ sub subtract{
         goto convert_to_twos_complement if $carry;
     }
 
-    # Add $a and $b using bitwise operations
     my $result = $a;
     $carry = $b;
 
-    # Use goto to simulate the loop for adding $a and $b
     add:
     {
         my $sum = $result ^ $carry;
@@ -112,7 +107,6 @@ sub multiply {
     my $result = 0;
     my $positive = 1;
 
-    # Check if either operand is negative
     if($a < 0){
         $a = negate($a);
         $positive = !$positive;
