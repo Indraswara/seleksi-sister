@@ -1,4 +1,6 @@
 # seleksi-sister
+nama: Indraswara Galih Jayanegara
+NIM: 13522119
 
 ## mental support 
 Mental-Mental Support gweh 
@@ -27,4 +29,23 @@ Mental-Mental Support gweh
 - [X] 15. Pelabuhan
 - [ ] 16. BMI 
 - [X] 17. klak-klak
-- [X] 18. TTKI 
+- [X] 18. TTKI
+
+## Note
+ada beberapa soal yang dikerjakan pada linux (ubuntu 24.04) dan windows 
+### windows 
+- 4bit 
+- GNU-Linux 
+- monkeDB 
+- I-Am-Dripping 
+- pelabuhan 
+- TTKI (ya dokumen doang sih) 
+- carpal (well, more like vm, tapi di cloud (azure))
+### Ubuntu 
+- sister.js 
+- fotosop 
+- benchmark 
+- wolfman 
+- calc
+
+dipikir-pikir yang ngoding ngerjainnya di ubuntu semua lmao, yang teknikal ngerjain di windows wakakakakak
