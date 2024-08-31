@@ -8,7 +8,7 @@ Linux yang saya gunakan sendiri adalah Ubuntu 24.04
 Pastikan lagi 
 - sudah menginstall CUDA Toolkit [tutorial](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
 - sudah menginstall opencv yang dibuild dengan CUDA [tutorial](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html?ref=wasyresearch.com)
-- Pastikan menginstall Cmake juga dengan perintah berikut (kalo gasalah)
+- Pastikan menginstall Cmake juga dengan perintah berikut (kalo gasalah. Ya berarti bener)
 
 ```bash
 sudo apt install cmake 
