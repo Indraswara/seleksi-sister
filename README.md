@@ -22,7 +22,7 @@ Mental-Mental Support gweh
 - [X] 8. Carpal Tunnel System: [doc](./8.Carpal/CARPAL-Dripping.pdf)
 - [ ] 9. CTF: GUA SKILL ISSUE
 - [X] 10. Sister.js: 
-- [ ] 11. Jancuk Pristail 
+- [X] 11. Jancuk Pristail **INI SERU BANGET JIR ASLI!!!**
 - [X] 12. Benchmarking: [doc](./12.benchmark/README.md)
 - [X] 13. Fotosop: [doc](./13.Fotosop/README.md)
 - [X] 14. I Am Dripping: [doc](./14.I-Am-Dripping/README.md)
