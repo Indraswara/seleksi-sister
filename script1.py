@@ -30,9 +30,8 @@ authorization_header = f'Basic {auth_base64}'
 # Membuat payload JSON
 payload = {
     "fullname": "Indraswara Galih Jayanegara",
-    "link": "https://github.com/Indraswara/seleksi-sister",
-    "message": "Kadang rasanya seperti tenggelam dalam lautan tugas yang tiada akhir. Setiap kali satu selesai, datang lagi yang lain, seolah-olah tak ada waktu untuk sekadar bernapas. Mata lelah menatap layar, pikiran terus berputar mencoba mengurai segala beban, namun hati ini mulai letih. Rasanya ingin menyerah, tapi tahu kalau itu bukan pilihan. Hanya bisa berharap waktu berjalan lebih cepat, dan akhirnya bisa melihat cahaya di ujung terowongan ini."
-
+    "link": "test",
+    "message": "Sementara "
 }
 
 # Melakukan request POST
@@ -42,12 +41,9 @@ headers = {
     'Authorization': authorization_header
 }
 
-try:
-    response = requests.post(url, headers=headers, data=json.dumps(payload))
+response = requests.post(url, headers=headers, data=json.dumps(payload))
 
-    # Menampilkan hasil
-    print(f'Status Code: {response.status_code}')
-    print(f'Response: {response.text}')
-    print(f'Headers: {response.headers}')
-except requests.exceptions.RequestException as e:
-    print(f'Error: {e}')
+# Menampilkan hasil
+print(f'Status Code: {response.status_code}')
+print(f'Response: {response.text}')
+print(f'Headers: {response.headers}')
