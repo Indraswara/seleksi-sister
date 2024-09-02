@@ -2,4 +2,4 @@
 
 ## Deliverables 
 - dokumen: [link](./GNU-Linux.pdf)
-- video: [link](https://youtu.be/MECJ13UP6mk)
+- video: [link](https://youtu.be/IHk-9QvN6LM)
