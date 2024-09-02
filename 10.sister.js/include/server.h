@@ -14,7 +14,6 @@
 
 #define PORT 8080
 #define SA struct sockaddr
-
 void custom_get_handler(int client_socket, const char* body, const char* content_type);
 void start_server();
 

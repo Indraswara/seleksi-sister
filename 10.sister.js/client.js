@@ -58,6 +58,36 @@ async function main() {
 
     console.log('Sending POST request...');
     await sendRequest(postOptions, postData);
+
+    // Example PUT request
+    const putData = JSON.stringify({ bjir: 'updated' });
+    const putOptions = {
+        hostname: 'localhost',
+        port: 8080,
+        path: '/update',
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(putData),
+        },
+    };
+
+    console.log('Sending PUT request...');
+    await sendRequest(putOptions, putData);
+
+    // Example DELETE request
+    const deleteOptions = {
+        hostname: 'localhost',
+        port: 8080,
+        path: '/delete',
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+
+    console.log('Sending DELETE request...');
+    await sendRequest(deleteOptions);
 }
 
 main().catch((err) => {
