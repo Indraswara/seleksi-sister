@@ -8,7 +8,7 @@ void random_handler(int client_socket, const char* body, const char* content_typ
 
 int main(int argc, char const* argv[]) {
     
-    add_route("GET", "/random", (void*) random_handler);
+    add_route("GET", "/LMAO", (void*) random_handler);
     start_server();
     return 0;
 }
